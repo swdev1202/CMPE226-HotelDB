@@ -19,7 +19,7 @@ Pre-requisites (for Windows 10)
 ```
 Assuming you installed both, let's install dependencies for our frontend.  
 Open up the VSCode and open a folder `HotelApp/frontend`.  
-Inside VSCode, we can open up a powershell commandline by pressing `Ctrl + `` (or go to View->Terminal)  
+Inside VSCode, we can open up a powershell commandline by pressing Ctrl + ` (or go to View->Terminal)  
 Make sure you are located inside frontend.  
 Now, run
 ```
