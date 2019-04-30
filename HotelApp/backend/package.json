@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Hotel DB Application Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CMPE226_Team7",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
