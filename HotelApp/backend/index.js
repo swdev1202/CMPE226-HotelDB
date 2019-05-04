@@ -166,19 +166,323 @@ app.post('/emplogin', function(req, res){
     })
 });
 
-app.post('/reservation', function(req, res){
-    console.log("Hello fom inside the post reservation backend..!")
+//---------------- GUEST RESERVTAION ------------------//
+app.post('/reservation/search', function(req, res){
+    console.log("Reservation Search");
 
     var onlyDateCheckIn = req.body.checkInDate_cal.slice(0,10);
     var onlyDateCheckOut = req.body.checkOutDate_cal.slice(0,10);
+    console.log(onlyDateCheckIn, onlyDateCheckOut);
 
-    // we will have to find how many rooms are available given the date
-    var sql = "SELECT * FROM Reservation WHERE beginDate = ? AND endDate = ?";
-    con.query(sql, [onlyDateCheckIn, onlyDateCheckOut], function(err, result) {
-        if (err) throw err;
-        console.log(result)
+    var sql = "SELECT roomNumber, roomType, roomPrice FROM Room WHERE roomNumber NOT IN (SELECT roomNum FROM Reservation WHERE beginDate = ?)";
+    con.query(sql, [onlyDateCheckIn], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            console.log(result);
+            res.send(result);
+        }
     });
 });
+
+app.post('/reservation/check', function(req, res){
+    console.log("Reservation Check");
+
+    var guestid = req.body.guestid;
+    console.log(guestid);
+
+    var sql = "SELECT * FROM Reservation WHERE guestID = ?";
+    con.query(sql, [guestid], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+app.post('/reservation/make', function(req,res){
+    console.log("Reservation Make");
+
+    var onlyDateCheckIn = req.body.checkInDate_cal.slice(0,10);
+    var onlyDateCheckOut = req.body.checkOutDate_cal.slice(0,10);
+    var userID = req.body.userID;
+    var roomNum = req.body.roomNumber;
+    console.log(onlyDateCheckIn, onlyDateCheckOut, userID, roomNum);
+
+    var sql = "INSERT INTO Reservation (beginDate, endDate, guestID, roomNum) VALUES (?,?,?,?)";
+    con.query(sql, [onlyDateCheckIn, onlyDateCheckOut, userID, roomNum], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            res.send("Insertion Success!");
+        }
+    });
+});
+
+//----------------- GUEST INVOICE ---------------------//
+app.post('/invoice', function(req,res){
+    console.log("Invoice check");
+
+    var userID = req.body.guestid;
+    console.log(userID);
+
+    var sql = "SELECT * FROM Invoice WHERE guestID = ?"
+    con.query(sql, [userID], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+
+/*******************************************************/
+/*********************** front desk ********************/
+/*******************************************************/
+
+//--------------------------rooms----------------------//
+// view rooms
+app.get('/frontdesk/view-room', function(req, res){
+    console.log("Room status request from the frontdesk");
+
+    var sql = "SELECT * FROM Room";
+    con.query(sql, function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+// update rooms
+app.post('/frontdesk/update-room', function(req, res){
+    console.log("Room status update request from the frontdesk")
+    var roomNum = req.body.roomNumber;
+    var newStatus = req.body.newStatus;
+    console.log(roomNum, newStatus)
+
+    var sql = "UPDATE Room SET roomStatus=? WHERE roomNumber=?";
+    con.query(sql, [newStatus, roomNum], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            var message = "Room Status Change Successful";
+            console.log(message);
+            res.send(message);
+        }
+    });
+});
+
+//--------------------------reservations----------------------//
+// view reservations
+app.get('/frontdesk/view-reservation', function(req, res){
+    console.log("Reservation status request from the frontdesk");
+    var sql = "SELECT * FROM Reservation";
+    con.query(sql, function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+// update reservations
+app.post('/frontdesk/update-reservation', function(req, res){
+    console.log("Reservation update request from the frontdesk")
+    // only allowing to change the room number
+    var roomNum = req.body.roomNumber;
+    var bookNum = req.body.bookNumber;
+    console.log(bookNum, roomNum)
+
+    var sql = "UPDATE Reservation SET roomNum=? WHERE bookNumber=?";
+    con.query(sql, [roomNum, bookNum], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            console.log(result);
+        }
+    });
+});
+
+// insert reservations
+app.post('/frontdesk/insert-reservation', function(req, res){
+    console.log("Reservation insert request from the frontdesk")
+    
+    var checkin = req.body.checkIn;
+    var checkout = req.body.checkOut;
+    var guestid = req.body.guestId;
+    var roomnum = req.body.roomNum;
+
+    console.log(checkin, checkout, guestid, roomnum);
+
+    var sql = "INSERT INTO Reservation (beginDate, endDate, guestID, roomNum) VALUES (?,?,?,?)";
+    con.query(sql, [checkin, checkout, guestid, roomnum], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            res.send("Inserted New Reservation!");
+        }
+    });
+});
+
+// delete reservations (manager)
+app.post('/frontdesk/delete-reservation', function(req, res){
+    console.log("Reservation delete request from the frontdesk")
+    var res_num = req.body.reservation_number
+    console.log(res_num)
+
+    var sql = "DELETE FROM Reservation WHERE bookNumber=?";
+    con.query(sql, [res_num], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            var message = "DELETE successfully"
+            console.log(message);
+            res.send(message);
+        }
+    });
+});
+
+// -----------------------invoice-----------------------//
+
+// view invoice
+app.get('/frontdesk/view-invoice', function(req, res){
+    console.log("Invoice status request from the frontdesk");
+
+    var sql = "SELECT * FROM Invoice";
+    con.query(sql, function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+// view invoice
+app.post('/frontdesk/view-invoice', function(req, res){
+    var sql = "SELECT * FROM Invoice";
+    con.query(sql, function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+// insert invoice
+app.post('/frontdesk/insert-invoice', function(req, res){
+    console.log("Invoice INSERT from the frontdesk");
+    
+    var guestID = req.body.guestID;
+    var invoiceDate = req.body.invoiceDate;
+    var roomCharge = req.body.roomCharge;
+    var foodCharge = req.body.foodCharge;
+
+    console.log(guestID, invoiceDate, roomCharge, foodCharge);
+
+    var sql = "INSERT INTO Invoice (invoiceDate, roomCharge, foodCharge, guestID) VALUES (?,?,?,?)";
+    con.query(sql, [invoiceDate, roomCharge, foodCharge, guestID], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            var message = "Inserted New Invoice!";
+            console.log(message);
+            res.send(message);
+        }
+    });
+});
+
+// update invoice
+app.post('/frontdesk/update-invoice', function(req, res){
+    console.log("Invoice Update from the frontdesk");
+    
+    var invoiceNum = req.body.invoice_num;
+    var invoiceDate = req.body.invoiceDate;
+    var roomCharge = req.body.roomCharge;
+    var foodCharge = req.body.foodCharge;
+
+    console.log(invoiceNum, invoiceDate, roomCharge, foodCharge);
+
+    var sql = "UPDATE Invoice SET invoiceDate=?, roomCharge=?, foodCharge=? WHERE invoiceNum=?";
+    con.query(sql, [invoiceDate, roomCharge, foodCharge, invoiceNum], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            var message = "Updated Invoice!";
+            console.log(message);
+            res.send(message);
+        }
+    });
+});
+
+// delete invoice (manager)
+app.post('/frontdesk/delete-invoice', function(req, res){
+    console.log("Invoice DELETE from the frontdesk")
+
+    var invoiceNum = req.body.invoice_num
+    console.log(invoiceNum)
+
+    var sql = "DELETE FROM Invoice WHERE invoiceNum=?";
+    con.query(sql, [invoiceNum], function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            var message = "DELETE successfully"
+            console.log(message);
+            res.send(message);
+        }
+    });
+});
+
+
+//--------------------------orders----------------------//
+// view orders
+app.get('/frontdesk/view-order', function(req, res){
+    console.log("Order status request from the frontdesk");
+    var sql = "SELECT * FROM Orders as O JOIN Produces as P WHERE O.orderNumber = P.orderNumber";
+    con.query(sql, function(err, result) {
+        if (err) {
+            throw err;
+        }
+        else{
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+app.post('/frontdesk/update-order', function(req, res){
+
+})
+
+
 
 app.listen(3001, function(req, res){
     console.log("Port 3001 is open and ready!");

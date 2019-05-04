@@ -71,36 +71,36 @@ class Create extends Component
                 <h2>Create a New User</h2>
 
                 <br />
-                <div class = "container">
+                <div className = "container">
                     <form>
-                        <div style = {{width: '30%'}} class = "form-group">
+                        <div style = {{width: '30%'}} className = "form-group">
                             Guest ID: <br />
-                            <input onChange = {this.guest_idHandler} type = "text" class = "form-control" name = "guest_id" placeholder = "Guest ID" required />
+                            <input onChange = {this.guest_idHandler} type = "text" className = "form-control" name = "guest_id" placeholder = "Guest ID" required />
                         </div>
 
-                        <div style = {{width: '30%'}} class = "form-group">
+                        <div style = {{width: '30%'}} className = "form-group">
                             <br />First name: <br />
-                            <input onChange = {this.firstnameHandler} type = "text" class = "form-control" name = "firstname" placeholder = "First name" required />   
+                            <input onChange = {this.firstnameHandler} type = "text" className = "form-control" name = "firstname" placeholder = "First name" required />   
                         </div>
 
-                        <div style = {{width: '30%'}} class = "form-group">
+                        <div style = {{width: '30%'}} className = "form-group">
                             <br />Last name: <br />
-                            <input onChange = {this.lastnameHandler} type = "text" class = "form-control" name = "lastname" placeholder = "Last name" required />
+                            <input onChange = {this.lastnameHandler} type = "text" className = "form-control" name = "lastname" placeholder = "Last name" required />
                         </div>
 
-                        <div style = {{width: '30%'}} class = "form-group">
+                        <div style = {{width: '30%'}} className = "form-group">
                             <br />Phone number: <br />
-                            <input onChange = {this.phone_numberHandler} type = "text" class = "form-control" name = "phone_number" placeholder = "Phone number" required />
+                            <input onChange = {this.phone_numberHandler} type = "text" className = "form-control" name = "phone_number" placeholder = "Phone number" required />
                         </div>
 
-                        <div style = {{width: '30%'}} class = "form-group">
+                        <div style = {{width: '30%'}} className = "form-group">
                             <br />Password: <br />
-                            <input onChange = {this.passwordHandler} type = "password" class = "form-control" name = "password" placeholder = "Password" required />
+                            <input onChange = {this.passwordHandler} type = "password" className = "form-control" name = "password" placeholder = "Password" required />
                         </div>
 
                         <div style = {{width: '30%'}}>
                             <br />
-                            <button class = "btn btn-success" type = "submit" onClick = {this.submitCreate}>Create New User</button>
+                            <button className = "btn btn-success" type = "submit" onClick = {this.submitCreate}>Create New User</button>
                         </div>
                     </form>
                 </div>

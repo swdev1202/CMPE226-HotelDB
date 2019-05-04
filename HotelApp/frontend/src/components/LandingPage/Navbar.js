@@ -31,15 +31,14 @@ class Navbar extends Component
             <div>
                 {redirectVar}
 
-                <nav class = "navbar navbar-inverse">
-                    <div class = "container-fluid">
-                        <ul class = "nav navbar-nav">
+                <nav className = "navbar navbar-inverse">
+                    <div className = "container-fluid">
+                        <ul className = "nav navbar-nav">
                             <li><Link to = "/home">Home Page</Link></li>
                             <li><Link to = "/login">Guest Login</Link></li>
                             <li><Link to = "/emplogin">Employee Login</Link></li>
                             <li><Link to = "/create">Create a New User</Link></li>
                         </ul>
-
                         {navLogin}
                     </div>
                 </nav>

@@ -86,23 +86,23 @@ class Login extends Component
             <div>
                 {redirectVar}
 
-                <div class = "container">
-                    <div class = "login-form">
-                        <div class = "main-div">
-                            <div class = "panel">
+                <div className = "container">
+                    <div className = "login-form">
+                        <div className = "main-div">
+                            <div className = "panel">
                                 <h2>Login:</h2>
                                 <p>Please enter your Guest ID and password below:</p>
                             </div>
 
-                            <div class = "form-group">
-                                <input onChange = {this.guest_idHandler} type = "text" class = "form-control" name = "guest_id" placeholder = "Guest ID" required />
+                            <div className = "form-group">
+                                <input onChange = {this.guest_idHandler} type = "text" className = "form-control" name = "guest_id" placeholder = "Guest ID" required />
                             </div>
 
-                            <div class = "form-group">
-                                <input onChange = {this.passwordHandler} type = "password" class = "form-control" name = "password" placeholder = "Password" required />
+                            <div className = "form-group">
+                                <input onChange = {this.passwordHandler} type = "password" className = "form-control" name = "password" placeholder = "Password" required />
                             </div>
 
-                            <button onClick = {this.submitLogin} class = "btn btn-primary">Login</button>
+                            <button onClick = {this.submitLogin} className = "btn btn-primary">Login</button>
                         </div>
                     </div>
                 </div>
