@@ -1,4 +1,6 @@
+/*CMPE226 Team7*/
 import React, {Component} from 'react';
+import '../../App.css';
 import Axios from 'axios';
 
 class Create extends Component
@@ -20,6 +22,7 @@ class Create extends Component
         this.lastnameHandler = this.lastnameHandler.bind(this);
         this.phone_numberHandler = this.phone_numberHandler.bind(this);
         this.passwordHandler = this.passwordHandler.bind(this);
+
         this.submitCreate = this.submitCreate.bind(this);
     }
 
@@ -66,6 +69,7 @@ class Create extends Component
     }
 
     render(){
+        /*
         return(
             <div>
                 <h2>Create a New User</h2>
@@ -103,6 +107,40 @@ class Create extends Component
                             <button className = "btn btn-success" type = "submit" onClick = {this.submitCreate}>Create New User</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        )*/
+        return(
+            <div class = "container">
+                <div class = "login-form">
+                    <div class = "main-div">
+                        <div class = "panel">
+                            <h2>Create a New Guest Account:</h2>
+                            <p>Please enter your Guest ID, first name, last name, phone number and a password to set up an account:</p>
+                        </div>
+
+                        <div class = "form-group">
+                            <input onChange = {this.guest_idHandler} type = "text" class = "form-control" name = "guest_id" placeholder = "Guest ID" />
+                        </div>
+
+                        <div class = "form-group">
+                            <input onChange = {this.firstnameHandler} type = "text" class = "form-control" name = "firstname" placeholder = "First name" />
+                        </div>
+
+                        <div class = "form-group">
+                            <input onChange = {this.lastnameHandler} type = "text" class = "form-control" name = "lastname" placeholder = "Last name" />
+                        </div>
+
+                        <div class = "form-group">
+                            <input onChange = {this.phone_numberHandler} type = "text" class = "form-control" name = "phone_number" placeholder = "Phone number" />
+                        </div>
+
+                        <div class = "form-group">
+                            <input onChange = {this.passwordHandler} type = "password" class = "form-control" name = "password" placeholder = "Password" />
+                        </div>
+                        <br></br>
+                        <button onClick = {this.submitCreate} class = "btn btn-primary">Create Account</button>
+                    </div>
                 </div>
             </div>
         )

@@ -14,7 +14,7 @@ class ReservationCheck extends Component
 
     checkReservation = (e) => {
         const data = {
-            guestid: 5 // will be replaced with the current session's guest id
+            guestid: "cmpe226" // will be replaced with the current session's guest id
         }
         Axios.post('http://localhost:3001/reservation/check', data)
         .then(response => {

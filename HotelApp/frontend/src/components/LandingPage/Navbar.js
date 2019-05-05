@@ -11,7 +11,7 @@ class Navbar extends Component
         this.handleLogout = this.handleLogout.bind(this);
     }
 
-    handleLogout = () => 
+    handleLogout = () =>
     {
         cookie.remove('cookie', {path: '/'});
     }
@@ -20,28 +20,45 @@ class Navbar extends Component
     {
         let navLogin = null;
 
-        let redirectVar = null;
-
         if (cookie.load('cookie'))
         {
-            redirectVar = <Redirect to = "/" />
+            console.log("Able to read cookie.. ");
+            navLogin = (
+                <ul class = "nav navbar-nav navbar-right">
+                    <li><Link to = "/" onClick = {this.handleLogout}><span class = "glyphicon glyphicon-user"></span>Logout</Link></li>
+                </ul>
+            )
+        }
+        else
+        {
+            console.log("Not able to read cookie! Try logging in.. ");
+            navLogin = (
+                <ul class = "nav navbar-nav navbar-right">
+                    <li><Link to = "/login"><span class = "glyphicon glyphicon-log-in"></span>Guest Login</Link></li>
+                </ul>
+            )
+        }
+
+        let redirectVar = null;
+        if (cookie.load('cookie'))
+        {
+            redirectVar = <Redirect to = "/home"/>
         }
 
         return(
             <div>
-                {redirectVar}
-
-                <nav className = "navbar navbar-inverse">
-                    <div className = "container-fluid">
-                        <ul className = "nav navbar-nav">
-                            <li><Link to = "/home">Home Page</Link></li>
-                            <li><Link to = "/login">Guest Login</Link></li>
-                            <li><Link to = "/emplogin">Employee Login</Link></li>
-                            <li><Link to = "/create">Create a New User</Link></li>
-                        </ul>
-                        {navLogin}
-                    </div>
-                </nav>
+               
+            <nav class = "navbar navbar-inverse">
+                <div class = "container-fluid">
+                    <ul class = "nav navbar-nav">
+                        <li class = "active"><Link to = "/home">Home</Link></li>
+                        <li><Link to = "/create">Create Guest Account</Link></li>
+                        <li><Link to = "/empcreate">Create Employee Account</Link></li>
+                        <li><Link to = "/empLogin">Employee Login</Link></li>
+                    </ul>
+                    {navLogin}
+                </div>
+            </nav>
             </div>
         )
     }

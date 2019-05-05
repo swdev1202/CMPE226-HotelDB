@@ -1,16 +1,16 @@
+/* CMPE226 Team 7 */
 var express = require('express');
 var app = express();
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
-var mkdirp = require('mkdirp');
-
-const bcrypt = require('bcrypt');
+const Cryptr = require('cryptr');
+const cryptr = new Cryptr('secretKey');
 
 const fileUpload = require('express-fileupload');
 app.use(fileUpload());
 
-// allow access control 
+// allow access control
 app.use(function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -20,6 +20,7 @@ app.use(function(req, res, next){
     next();
 })
 
+// crate a new connection information
 var con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -27,6 +28,7 @@ var con = mysql.createConnection({
     database: 'hotel'
 })
 
+// connect to the database
 con.connect(function(err){
     if (err)
     {
@@ -42,129 +44,174 @@ app.use(cors({origin: 'http://localhost:3000', credentials: true}));
 
 app.use(bodyParser.json());
 
-// you can see this on your browser, localhost:3001
 app.get('/', function(req, res){
     res.send("Hello from index.js back end!");
 })
 
+
+/******************************Sign-Up******************************/
+// GUEST CREATE BACKEND
 app.post('/create', function(req, res){
     console.log("Hello from inside the post create backend..!");
 
-    var encryptPassword = null;
+    // first, encrypt our plain text password
+    const encryptPassword = cryptr.encrypt(req.body.password);
 
-    bcrypt.hash(mysql.escape(req.body.password), 10, function(err, hash){
-        console.log(hash);
-        
-        var sql = "INSERT INTO Guest (guestID, guestFName, guestLName, guestPhoneNumber, guestPassword) VALUES ( " +
-        mysql.escape(req.body.guest_id) + ", " +
-        mysql.escape(req.body.firstname) + ", " + 
-        mysql.escape(req.body.lastname) + ", " + 
-        mysql.escape(req.body.phone_number) + ", " + 
-        mysql.escape(hash) + ")";
+    // create a SQL query using a stored procedure on DB
+    var sql = "CALL createGuest (" +
+    mysql.escape(req.body.guest_id) + ", " +
+    mysql.escape(req.body.firstname) + ", " +
+    mysql.escape(req.body.lastname) + ", " + 
+    mysql.escape(req.body.phone_number) + ", " +
+    mysql.escape(encryptPassword) + " )";
 
-        con.query(sql, function(err, result){
-            if (err)
-            {
-                res.writeHead(400, {
-                    'Content-Type': 'text/plain'
-                })
+    con.query(sql, function(err, result){
+        if (err)
+        {
+            // HTTP 400
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
 
-                res.end("Error while creating user..!");
-                console.log("Error while creating user..!");
-                console.log(err);
-            }
-            else
-            {
-                res.writeHead(200, {
-                    'Content-Type': 'text/plain'
-                })
+            res.end("Error while creating user..!");
+            console.log("Error while creating user..!");
+        }
+        else
+        {
+            // HTTP 200
+            res.writeHead(200, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("User created successfully!");
+            console.log("User created successfully!");
+        }
+    })
+})
 
-                res.end("User created successfully!");
-                console.log("User created successfully!");
-            }
-        })
-    });
+// EMPLOYEE CREATE BACKEND
+app.post('/empcreate', function(req, res){
+    console.log("Hello from inside the post employee create back end.. ");
 
-});
+    // first, encrpyt a plain text password
+    const encryptPassword = cryptr.encrypt(req.body.password);
 
+    // SQL query using a stored procedure in DB
+    var sql = "CALL createEmployee (" +
+    mysql.escape(req.body.emp_id) + ", " +
+    mysql.escape(req.body.ssn) + ", " +
+    mysql.escape(req.body.firstname) + ", " +
+    mysql.escape(req.body.lastname) + ", " + 
+    mysql.escape(req.body.dob) + ", " +
+    mysql.escape(req.body.salary) + ", " +
+    mysql.escape(encryptPassword) + ", " + 
+    mysql.escape(req.body.dno) + ")";
+
+    con.query(sql, function(err, result){
+        if (err)
+        {
+            // HTTP 400
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while creating employee..");
+            console.log("Error while creating employee!");
+        }
+        else
+        {
+            // HTTP 200
+            res.writeHead(200, {
+                'Content-Type': 'text/plain'
+            })
+            res.end('Employee created successfully!');
+            console.log("Employee created successfully!");
+        }
+    })
+})
+
+// GUEST LOGIN BACKEND
 app.post('/login', function(req, res){
-    console.log("Hello from inside the (post) login backend..!");
+    console.log("Hello from inside the post login back end.. ");
 
     var guest_id = req.body.guest_id;
+    var password = req.body.password;
+    var guest = guest_id;
 
-    var sql = "SELECT guestPassword From Guest WHERE guestID = " + 
-    mysql.escape(guest_id);
-
+    // First, retrieve the stored password given a guest_id
+    var sql = "CALL getGuestPassword ( " +
+    mysql.escape(guest) + ")";
     con.query(sql, function(err, result){
-        if (result.length > 0)
+
+        console.log(result);
+        // Decrypt the stored password to compare with given password
+        const decryptPassword = cryptr.decrypt(result[0][0].guestPassword);
+
+        if (password === decryptPassword)
         {
-            console.log("Is our query successful?");
-            console.log(result[0].guestPassword);
+            console.log("Valid password!");
 
-            bcrypt.compare(req.body.password, result[0].guestPassword, function(err, success){
-                if (success == true)
-                {
-                    console.log("Valid password!");
-
-                    res.cookie('cookie', guest_id, {maxAge: 900000, httpOnly: false, path: '/'});
-
-                    res.writeHead(200, {
-                        'Content-Type': 'text/plain'
-                    })
-
-                    res.end("Successful login!");
-                }
-                else
-                {
-                    console.log("Invalid password!");
-
-                    res.writeHead(400, {
-                        'Content-Type': 'text/plain'
-                    })
-
-                    res.end("Invalid credentials!");
-                }
+            // Assigning this guest session
+            res.cookie('cookie', req.body.guest_id, {maxAge: 900000, httpOnly: false, path : '/'});
+            res.writeHead(200, {
+                'Content-Type': 'text/plain'
             })
+
+            res.end("Successful login");
+            console.log("Successful login!");
+        }
+        else
+        {
+            console.log("Invalid password!");
+
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+
+            res.end("Invalid credentials");
+            console.log("Invalid credentials!");
         }
     })
-});
+})
 
+// EMPLOYEE LOGIN BACKEND
 app.post('/emplogin', function(req, res){
-    console.log("Hello from inside the (post) employee login backend..!");
+    console.log("Hello from inside the post employee login back end.. ");
 
-    var sql = "SELECT employeePassword From Employee WHERE employeeID = " + 
-    mysql.escape(employee_id);
+    var emp_id = req.body.emp_id;
+    var password = req.body.password;
+    // var employee = emp_id;
+
+    var sql = "CALL getEmployeePassword (" + 
+    mysql.escape(emp_id) + ")";
 
     con.query(sql, function(err, result){
-        if (result.length > 0)
+        // First, decrpyt stored password
+        const decryptPassword = cryptr.decrypt(result[0][0].employeePassword);
+
+        if (password === decryptPassword)
         {
-            bcrypt.compare(req.body.password, result[0].employeePassword, function(err, success){
-                if (success == true)
-                {
-                    console.log("Valid password!");
-
-                    res.cookie('cookie', guest_id, {maxAge: 900000, httpOnly: false, path: '/'});
-
-                    res.writeHead(200, {
-                        'Content-Type': 'text/plain'
-                    })
-
-                    res.end("Successful login!");
-                }
-                else
-                {
-                    console.log("Invalid password!");
-
-                    res.writeHead(400, {
-                        'Content-Type': 'text/plain'
-                    })
-
-                    res.end("Invalid credentials!");
-                }
+            console.log("Valid password!");
+            // Give this employee a new session
+            res.cookie('cookie', req.body.emp_id, {maxAge: 900000, httpOnly: false, path : '/'});
+            res.writeHead(200, {
+                'Content-Type': 'text/plain'
             })
+
+            res.end("Successful login");
+            console.log("Successful login!");
+        }
+        else
+        {
+            console.log("Invalid password!");
+
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+
+            res.end("Invalid credentials");
+            console.log("Invalid credentials!");
         }
     })
-});
+})
 
 //---------------- GUEST RESERVTAION ------------------//
 app.post('/reservation/search', function(req, res){

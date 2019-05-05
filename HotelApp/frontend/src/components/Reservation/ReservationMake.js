@@ -31,7 +31,7 @@ class ReservationMake extends Component
             checkInDate_cal: this.state.checkInDate_cal,
             checkOutDate_cal: this.state.checkOutDate_cal,
             roomNumber: this.state.roomNumber,
-            userID: "5"
+            userID: "cmpe226"
         }
         Axios.post('http://localhost:3001/reservation/make', data)
         .then(response => {

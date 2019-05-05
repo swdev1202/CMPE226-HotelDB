@@ -12,12 +12,12 @@ class empLogin extends Component
 
         this.state = 
         {
-            employee_id: "",
+            emp_id: "",
             password: "",
             authFlag: false
         }
 
-        this.employee_idHandler = this.employee_idHandler.bind(this);
+        this.emp_idHandler = this.emp_idHandler.bind(this);
         this.passwordHandler = this.passwordHandler.bind(this);
         this.submitLogin = this.submitLogin.bind(this);
     }
@@ -28,27 +28,27 @@ class empLogin extends Component
         })
     }
 
-    employee_idHandler = (e) => 
+    emp_idHandler = (e) =>
     {
         this.setState({
-            employee_id: e.target.value
+            emp_id: e.target.value
         })
     }
 
-    passwordHandler = (e) => 
+    passwordHandler = (e) =>
     {
         this.setState({
             password: e.target.value
         })
     }
 
-    submitLogin = (e) => 
+    submitLogin = (e) =>
     {
         e.preventDefault();
 
         const data = 
         {
-            employee_id: this.state.employee_id,
+            emp_id: this.state.emp_id,
             password: this.state.password
         }
 
@@ -58,19 +58,18 @@ class empLogin extends Component
             .then(response => {
                 console.log("Status code: ", response.status);
 
-                if (response.status === 200)
-                {
+                if (response.status === 200){
                     this.setState({
                         authFlag: true
                     })
                 }
-                else
-                {
+                else{
                     this.setState({
                         authFlag: false
                     })
                 }
             });
+        
     }
 
     render()
@@ -84,28 +83,27 @@ class empLogin extends Component
 
         return(
             <div>
-                {redirectVar}
-
-                <div className = "container">
-                    <div className = "login-form">
-                        <div className = "main-div">
-                            <div className = "panel">
-                                <h2>Employee Login:</h2>
-                                <p>Please enter your Employee ID and password below:</p>
-                            </div>
-
-                            <div className = "form-group">
-                                <input onChange = {this.employee_idHandler} type = "text" className = "form-control" name = "employee_id" placeholder = "Employee ID" required />
-                            </div>
-
-                            <div className = "form-group">
-                                <input onChange = {this.passwordHandler} type = "password" className = "form-control" name = "password" placeholder = "Password" required />
-                            </div>
-
-                            <button onClick = {this.submitLogin} className = "btn btn-primary">Login</button>
+              
+            <div class = "container">
+                <div class = "login-form">
+                    <div class = "main-div">
+                        <div class = "panel">
+                            <h2>Employee Login:</h2>
+                            <p>Please enter your Employee ID and password:</p>
                         </div>
+
+                        <div class = "form-group">
+                            <input onChange = {this.emp_idHandler} type = "text" class = "form-control" name = "emp_id" placeholder = "Employee ID" required />
+                        </div>
+
+                        <div class = "form-group">
+                            <input onChange = {this.passwordHandler} type = "password" class = "form-control" name = "password" placeholder = "Password" required/>
+                        </div>
+
+                        <button onClick = {this.submitLogin} class = "btn btn-primary">Login</button>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }
