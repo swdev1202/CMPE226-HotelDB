@@ -44,7 +44,6 @@ class ReservationSearch extends Component
                             onChange={this.onChange_in}
                             value={this.state.checkInDate_cal} />
                         </div>
-
                         <div style = {{width: '30%'}} className = "form-group">
                             Check-Out Date: <br />
                             <Calendar
@@ -52,14 +51,27 @@ class ReservationSearch extends Component
                             value={this.state.checkOutDate_cal}/>
                         </div>
                         <div>
-                            
-                        </div>
-                        <div style = {{width: '30%'}}>
-                            <br />
                             <button className = "btn btn-success" type = "button" onClick = {this.submitDate}>Search</button>
                         </div>
-                        <div>
-                        </div>
+                        <h2>Search Results (std:standard, lux:luxury, sui:suite)</h2>
+                        <table border = "1px" className = "table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Room Number</th>
+                                        <th>Room Type</th>
+                                        <th>Room Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {this.state.occupancy.map(detail =>
+                                    <tr key = {detail.roomNumber}>
+                                        <td>{detail.roomNumber}</td>
+                                        <td>{detail.roomType}</td>
+                                        <td>{detail.roomPrice}</td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
                     </form>
                 </div>
             </div>

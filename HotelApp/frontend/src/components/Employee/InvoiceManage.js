@@ -8,7 +8,7 @@ class InvoiceManage extends Component
         super(props);
         this.state =
         {
-            invoce_table: [],
+            invoice_table: [],
             guest_id: "",
             invoice_date: "",
             room_charge: "",
@@ -100,89 +100,116 @@ class InvoiceManage extends Component
 
 
     render(){
-
         return(
             <div>
                 <div>
                     <h2>Invoice Manage Page</h2>
                     <div>
                         <button onClick={this.getAllInvoice}>View Invoices</button>
+                        <table border = "1px" className = "table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Invoice Number</th>
+                                    <th>Invoice Date</th>
+                                    <th>Guest ID</th>
+                                    <th>Room Charge</th>
+                                    <th>Food Charge</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.invoice_table.map(detail =>
+                                    <tr key = {detail.invoiceNum}>
+                                        <td>{detail.invoiceNum}</td>
+                                        <td>{detail.invoiceDate}</td>
+                                        <td>{detail.guestID}</td>
+                                        <td>{detail.roomCharge}</td>
+                                        <td>{detail.foodCharge}</td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
                 <div>
                     <h2>Invoice Add</h2>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Guest ID</th>
-                                <th>Invoice Date</th>
-                                <th>Room Charge</th>
-                                <th>Food Charge</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input onChange = {this.guestid_Handler} type = "text" className = "form-control" name = "guestid" placeholder = "" required />   
-                                </td>
-                                <td>
-                                    <input onChange = {this.invoicedate_Handler} type = "text" className = "form-control" name = "invoiceDate" placeholder = "YYYY-MM-DD" required />
-                                </td>
-                                <td>
-                                    <input onChange = {this.roomcharge_Handler} type = "text" className = "form-control" name = "roomCharge" placeholder = "$" required />
-                                </td>
-                                <td>
-                                    <input onChange = {this.foodcharge_Handler} type = "text" className = "form-control" name = "foodCharge" placeholder = "$" required />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button onClick={this.insertInvoice}>Insert</button>
+                    <form>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Guest ID</th>
+                                    <th>Invoice Date</th>
+                                    <th>Room Charge</th>
+                                    <th>Food Charge</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input onChange = {this.guestid_Handler} type = "text" className = "form-control" name = "guestid" placeholder = "" required />   
+                                    </td>
+                                    <td>
+                                        <input onChange = {this.invoicedate_Handler} type = "text" className = "form-control" name = "invoiceDate" placeholder = "YYYY-MM-DD" required />
+                                    </td>
+                                    <td>
+                                        <input onChange = {this.roomcharge_Handler} type = "text" className = "form-control" name = "roomCharge" placeholder = "$" required />
+                                    </td>
+                                    <td>
+                                        <input onChange = {this.foodcharge_Handler} type = "text" className = "form-control" name = "foodCharge" placeholder = "$" required />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" onClick={this.insertInvoice}>Insert</button>
+                    </form>
                 </div>
 
                 <div>
                     <h2>Invoice Update</h2>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Invoice Number</th>
-                                <th>Invoice Date</th>
-                                <th>Room Charge</th>
-                                <th>Food Charge</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input onChange = {this.invoicenum_Handler} type = "text" className = "form-control" name = "invoiceNum" placeholder = "" required />   
-                                </td>
-                                <td>
-                                    <input onChange = {this.invoicedate_Handler} type = "text" className = "form-control" name = "invoiceDate" placeholder = "YYYY-MM-DD" required />
-                                </td>
-                                <td>
-                                    <input onChange = {this.roomcharge_Handler} type = "text" className = "form-control" name = "roomCharge" placeholder = "$" required />
-                                </td>
-                                <td>
-                                    <input onChange = {this.foodcharge_Handler} type = "text" className = "form-control" name = "foodCharge" placeholder = "$" required />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button onClick={this.updateInvoice}>Update</button>
+                    <form>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Invoice Number</th>
+                                    <th>Invoice Date</th>
+                                    <th>Room Charge</th>
+                                    <th>Food Charge</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input onChange = {this.invoicenum_Handler} type = "text" className = "form-control" name = "invoiceNum" placeholder = "" required />   
+                                    </td>
+                                    <td>
+                                        <input onChange = {this.invoicedate_Handler} type = "text" className = "form-control" name = "invoiceDate" placeholder = "YYYY-MM-DD" required />
+                                    </td>
+                                    <td>
+                                        <input onChange = {this.roomcharge_Handler} type = "text" className = "form-control" name = "roomCharge" placeholder = "$" required />
+                                    </td>
+                                    <td>
+                                        <input onChange = {this.foodcharge_Handler} type = "text" className = "form-control" name = "foodCharge" placeholder = "$" required />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" onClick={this.updateInvoice}>Update</button>
+                    </form>
                 </div>
 
                 <div>
                     <h2>Invoice Delete</h2>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Invoice Number</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input onChange = {this.invoicenum_Handler} type = "text" className = "form-control" name = "invoiceNum" placeholder = "" required />   
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button onClick={this.deleteInvoice}>Delete</button>
+                    <form>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Invoice Number</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input onChange = {this.invoicenum_Handler} type = "text" className = "form-control" name = "invoiceNum" placeholder = "" required />   
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" onClick={this.deleteInvoice}>Delete</button>
+                    </form>
                 </div>
             </div>
         )

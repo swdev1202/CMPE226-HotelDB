@@ -32,8 +32,26 @@ class Invoice extends Component
             <div>
                 <h2>Your Invoice</h2>
                 <div style = {{width: '30%'}}>
-                    <button className = "btn btn-success" type = "button" onClick = {this.requestInvoice}>Check</button>
+                    <button className = "btn btn-success" type = "button" onClick = {this.requestInvoice}>View</button>
                 </div>
+                <table border = "1px" className = "table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Invoice Date</th>
+                            <th>Room Charge</th>
+                            <th>Food Charge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.invoice_list.map(detail =>
+                            <tr key = {detail.invoiceNum}>
+                                <td>{detail.invoiceDate}</td>
+                                <td>{detail.roomCharge}</td>
+                                <td>{detail.foodCharge}</td>
+                            </tr>
+                         )}
+                    </tbody>
+                </table>
             </div>
         )
     }

@@ -55,26 +55,48 @@ class RoomManage extends Component
                 <h2>Room Manage Page</h2>
                 <div>
                     <button onClick={this.getAllRooms}>View Rooms</button>
+                    <table border = "1px" className = "table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Room Number</th>
+                                <th>Room Type</th>
+                                <th>Room Price</th>
+                                <th>Room Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.room_table.map(detail =>
+                                <tr key = {detail.roomNumber}>
+                                    <td>{detail.roomNumber}</td>
+                                    <td>{detail.roomType}</td>
+                                    <td>{detail.roomPrice}</td>
+                                    <td>{detail.roomStatus}</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
                 </div>
 
                 <h2>Room Status Change</h2>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Room Number</th>
-                            <th>New Room Status</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input onChange = {this.roomNumber_Handler} type = "text" className = "form-control" name = "roomNum" placeholder = "" required />   
-                            </td>
-                            <td>
-                                <input onChange = {this.roomStatus_Handler} type = "text" className = "form-control" name = "newStatus" placeholder = "[0-3]" required />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button onClick={this.updateRoom}>Update</button>
+                <form>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Room Number</th>
+                                <th>New Room Status</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input onChange = {this.roomNumber_Handler} type = "text" className = "form-control" name = "roomNum" placeholder = "" required />   
+                                </td>
+                                <td>
+                                    <input onChange = {this.roomStatus_Handler} type = "text" className = "form-control" name = "newStatus" placeholder = "[0-3]" required />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="submit" onClick={this.updateRoom}>Update</button>
+                </form>
             </div>
         )
     }

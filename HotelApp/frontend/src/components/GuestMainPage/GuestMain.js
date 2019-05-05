@@ -7,7 +7,7 @@ class GuestMain extends Component
         return(
             <div>
                 <h2>Guest Page</h2>
-                <div class = "table">
+                <div className = "table">
                     <ul>
                         <li><Link to = "/reservation">Reservation</Link></li>
                         <li><Link to = "/invoice">Invoice</Link></li>

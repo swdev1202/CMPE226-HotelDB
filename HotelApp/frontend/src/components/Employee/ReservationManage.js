@@ -93,55 +93,82 @@ class ReservationManage extends Component
                     <h2>Reservation Manage Page</h2>
                     <div>
                         <button onClick={this.getAllReservations}>View Reservations</button>
+                        <table border = "1px" className = "table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Reservation Number</th>
+                                    <th>Check In Date</th>
+                                    <th>Check Out Date</th>
+                                    <th>Room Number</th>
+                                    <th>Guest ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.reservation_table.map(detail =>
+                                    <tr key = {detail.bookNumber}>
+                                        <td>{detail.bookNumber}</td>
+                                        <td>{detail.beginDate}</td>
+                                        <td>{detail.endDate}</td>
+                                        <td>{detail.roomNum}</td>
+                                        <td>{detail.guestID}</td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
                 <div>
                     <h2>Reservation Add</h2>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Check-In Date</th>
-                                <th>Check-Out Date</th>
-                                <th>Guest ID</th>
-                                <th>Room Number</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input onChange = {this.checkin_Handler} type = "text" className = "form-control" name = "checkin" placeholder = "YYYY-MM-DD" required />   
-                                </td>
-                                <td>
-                                    <input onChange = {this.checkout_Handler} type = "text" className = "form-control" name = "checkout" placeholder = "YYYY-MM-DD" required />
-                                </td>
-                                <td>
-                                    <input onChange = {this.guestid_Handler} type = "text" className = "form-control" name = "guestID" placeholder = "guest's ID" required />
-                                </td>
-                                <td>
-                                    <input onChange = {this.roomnum_Handler} type = "text" className = "form-control" name = "newStatus" placeholder = "room number" required />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button onClick={this.insertReservation}>Insert</button>
+                    <div className = "container">
+                        <form>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Check-In Date</th>
+                                        <th>Check-Out Date</th>
+                                        <th>Guest ID</th>
+                                        <th>Room Number</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input onChange = {this.checkin_Handler} type = "text" className = "form-control" name = "checkin" placeholder = "YYYY-MM-DD" required />   
+                                        </td>
+                                        <td>
+                                            <input onChange = {this.checkout_Handler} type = "text" className = "form-control" name = "checkout" placeholder = "YYYY-MM-DD" required />
+                                        </td>
+                                        <td>
+                                            <input onChange = {this.guestid_Handler} type = "text" className = "form-control" name = "guestID" placeholder = "guest's ID" required />
+                                        </td>
+                                        <td>
+                                            <input onChange = {this.roomnum_Handler} type = "text" className = "form-control" name = "newStatus" placeholder = "room number" required />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button type="submit" onClick={this.insertReservation}>Insert</button>
+                        </form>
+                    </div>
                 </div>
 
                 <div>
                     <h2>Reservation Delete (Manager Only)</h2>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Reservation Number</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input onChange = {this.reservenum_Handler} type = "text" className = "form-control" name = "reserveNum" placeholder = "" required />   
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button onClick={this.deleteReservation}>Delete</button>
+                    <form>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Reservation Number</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input onChange = {this.reservenum_Handler} type = "text" className = "form-control" name = "reserveNum" placeholder = "" required />   
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="submit" onClick={this.deleteReservation}>Delete</button>
+                    </form>
                 </div>
-
             </div>
         )
     }

@@ -68,7 +68,7 @@ class ReservationMake extends Component
                         </div>
                         <div style = {{width: '30%'}}>
                             <br />
-                            <button className = "btn btn-success" type = "button" onClick = {this.submitReservation}>submit</button>
+                            <button type="submit" className = "btn btn-success" onClick = {this.submitReservation}>submit</button>
                         </div>
                         <div>
                         </div>

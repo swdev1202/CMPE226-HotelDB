@@ -168,8 +168,6 @@ app.post('/emplogin', function(req, res){
 
 //---------------- GUEST RESERVTAION ------------------//
 app.post('/reservation/search', function(req, res){
-    console.log("Reservation Search");
-
     var onlyDateCheckIn = req.body.checkInDate_cal.slice(0,10);
     var onlyDateCheckOut = req.body.checkOutDate_cal.slice(0,10);
     console.log(onlyDateCheckIn, onlyDateCheckOut);
@@ -187,12 +185,10 @@ app.post('/reservation/search', function(req, res){
 });
 
 app.post('/reservation/check', function(req, res){
-    console.log("Reservation Check");
-
     var guestid = req.body.guestid;
     console.log(guestid);
 
-    var sql = "SELECT * FROM Reservation WHERE guestID = ?";
+    var sql = "SELECT * FROM Reservation WHERE guestID = ? ORDER BY beginDate ASC";
     con.query(sql, [guestid], function(err, result) {
         if (err) {
             throw err;
@@ -205,8 +201,6 @@ app.post('/reservation/check', function(req, res){
 });
 
 app.post('/reservation/make', function(req,res){
-    console.log("Reservation Make");
-
     var onlyDateCheckIn = req.body.checkInDate_cal.slice(0,10);
     var onlyDateCheckOut = req.body.checkOutDate_cal.slice(0,10);
     var userID = req.body.userID;
@@ -226,12 +220,10 @@ app.post('/reservation/make', function(req,res){
 
 //----------------- GUEST INVOICE ---------------------//
 app.post('/invoice', function(req,res){
-    console.log("Invoice check");
-
     var userID = req.body.guestid;
     console.log(userID);
 
-    var sql = "SELECT * FROM Invoice WHERE guestID = ?"
+    var sql = "SELECT * FROM Invoice WHERE guestID = ? ORDER BY invoiceDate ASC"
     con.query(sql, [userID], function(err, result) {
         if (err) {
             throw err;
@@ -251,9 +243,7 @@ app.post('/invoice', function(req,res){
 //--------------------------rooms----------------------//
 // view rooms
 app.get('/frontdesk/view-room', function(req, res){
-    console.log("Room status request from the frontdesk");
-
-    var sql = "SELECT * FROM Room";
+    var sql = "SELECT * FROM Room ORDER BY roomNumber ASC";
     con.query(sql, function(err, result) {
         if (err) {
             throw err;
@@ -267,7 +257,6 @@ app.get('/frontdesk/view-room', function(req, res){
 
 // update rooms
 app.post('/frontdesk/update-room', function(req, res){
-    console.log("Room status update request from the frontdesk")
     var roomNum = req.body.roomNumber;
     var newStatus = req.body.newStatus;
     console.log(roomNum, newStatus)
@@ -289,7 +278,7 @@ app.post('/frontdesk/update-room', function(req, res){
 // view reservations
 app.get('/frontdesk/view-reservation', function(req, res){
     console.log("Reservation status request from the frontdesk");
-    var sql = "SELECT * FROM Reservation";
+    var sql = "SELECT * FROM Reservation ORDER BY bookNumber ASC";
     con.query(sql, function(err, result) {
         if (err) {
             throw err;
@@ -303,8 +292,6 @@ app.get('/frontdesk/view-reservation', function(req, res){
 
 // update reservations
 app.post('/frontdesk/update-reservation', function(req, res){
-    console.log("Reservation update request from the frontdesk")
-    // only allowing to change the room number
     var roomNum = req.body.roomNumber;
     var bookNum = req.body.bookNumber;
     console.log(bookNum, roomNum)
@@ -322,8 +309,6 @@ app.post('/frontdesk/update-reservation', function(req, res){
 
 // insert reservations
 app.post('/frontdesk/insert-reservation', function(req, res){
-    console.log("Reservation insert request from the frontdesk")
-    
     var checkin = req.body.checkIn;
     var checkout = req.body.checkOut;
     var guestid = req.body.guestId;
@@ -344,7 +329,6 @@ app.post('/frontdesk/insert-reservation', function(req, res){
 
 // delete reservations (manager)
 app.post('/frontdesk/delete-reservation', function(req, res){
-    console.log("Reservation delete request from the frontdesk")
     var res_num = req.body.reservation_number
     console.log(res_num)
 
@@ -365,23 +349,7 @@ app.post('/frontdesk/delete-reservation', function(req, res){
 
 // view invoice
 app.get('/frontdesk/view-invoice', function(req, res){
-    console.log("Invoice status request from the frontdesk");
-
-    var sql = "SELECT * FROM Invoice";
-    con.query(sql, function(err, result) {
-        if (err) {
-            throw err;
-        }
-        else{
-            console.log(result);
-            res.send(result);
-        }
-    });
-});
-
-// view invoice
-app.post('/frontdesk/view-invoice', function(req, res){
-    var sql = "SELECT * FROM Invoice";
+    var sql = "SELECT * FROM Invoice ORDER BY invoiceNum ASC";
     con.query(sql, function(err, result) {
         if (err) {
             throw err;
@@ -395,8 +363,6 @@ app.post('/frontdesk/view-invoice', function(req, res){
 
 // insert invoice
 app.post('/frontdesk/insert-invoice', function(req, res){
-    console.log("Invoice INSERT from the frontdesk");
-    
     var guestID = req.body.guestID;
     var invoiceDate = req.body.invoiceDate;
     var roomCharge = req.body.roomCharge;
@@ -419,8 +385,6 @@ app.post('/frontdesk/insert-invoice', function(req, res){
 
 // update invoice
 app.post('/frontdesk/update-invoice', function(req, res){
-    console.log("Invoice Update from the frontdesk");
-    
     var invoiceNum = req.body.invoice_num;
     var invoiceDate = req.body.invoiceDate;
     var roomCharge = req.body.roomCharge;
@@ -443,8 +407,6 @@ app.post('/frontdesk/update-invoice', function(req, res){
 
 // delete invoice (manager)
 app.post('/frontdesk/delete-invoice', function(req, res){
-    console.log("Invoice DELETE from the frontdesk")
-
     var invoiceNum = req.body.invoice_num
     console.log(invoiceNum)
 
@@ -477,12 +439,6 @@ app.get('/frontdesk/view-order', function(req, res){
         }
     });
 });
-
-app.post('/frontdesk/update-order', function(req, res){
-
-})
-
-
 
 app.listen(3001, function(req, res){
     console.log("Port 3001 is open and ready!");

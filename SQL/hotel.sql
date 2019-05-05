@@ -77,9 +77,9 @@ CREATE TABLE Department(
 -- ALTER TABLE Guest ADD CONSTRAINT PK_Guest_ID PRIMARY KEY(guestID);
 -- ALTER TABLE Invoice ADD CONSTRAINT PK_Invoicec_Num PRIMARY KEY(invoiceNum);
 -- ALTER TABLE Reservation ADD CONSTRAINT PK_Reservation_Num PRIMARY KEY(bookNumber);
--- ALTER TABLE Room ADD CONSTRAINT PK_Room_Num PRIMARY KEY(roomNumber);
+ALTER TABLE Room ADD CONSTRAINT PK_Room_Num PRIMARY KEY(roomNumber);
 -- ALTER TABLE Orders ADD CONSTRAINT PK_Order_Num PRIMARY KEY(orderNumber);
--- ALTER TABLE Produces ADD CONSTRAINT PK_Produce_orNum_fID PRIMARY KEY(orderNumber, foodID);
+ALTER TABLE Produces ADD CONSTRAINT PK_Produce_orNum_fID PRIMARY KEY(orderNumber, foodID);
 -- ALTER TABLE Food ADD CONSTRAINT PK_Food_ID PRIMARY KEY(foodID);
 -- ALTER TABLE Employee ADD CONSTRAINT PK_Employee_SSN PRIMARY KEY(employeeSSN);
 -- ALTER TABLE Department ADD CONSTRAINT PK_Department_Num PRIMARY KEY(departmentNumber);

@@ -25,16 +25,30 @@ class ReservationCheck extends Component
     }
 
     render(){
-        const {data} = this.state.reservation_table;
         return(
             <div>
                 <h2>Your Reservation</h2>
                 <div style = {{width: '30%'}}>
                     <button className = "btn btn-success" type = "button" onClick = {this.checkReservation}>Get</button>
                 </div>
-                <div className = "checking">
-                    <p>{data}</p>
-                </div>
+                <table border = "1px" className = "table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Check-In</th>
+                            <th>Check-Out</th>
+                            <th>Room Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.reservation_table.map(detail =>
+                            <tr key = {detail.bookNumber}>
+                                <td>{detail.beginDate}</td>
+                                <td>{detail.endDate}</td>
+                                <td>{detail.roomNum}</td>
+                            </tr>
+                         )}
+                    </tbody>
+                </table>
             </div>
         )
     }
