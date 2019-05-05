@@ -8,26 +8,23 @@ CREATE TABLE Guest(
     guestFName VARCHAR(20),
     guestLName VARCHAR(20),
     guestPhoneNumber CHAR(10),
-    guestPassword VARCHAR(72) NOT NULL, -- becrypt
-    PRIMARY KEY(guestID)
+	guestPassword VARCHAR(72) NOT NULL -- VARHCAR size depending on the encrpytion 
 );
 
 CREATE TABLE Invoice(
-    invoiceNum INT NOT NULL AUTO_INCREMENT, -- PK
+    invoiceNum INT NOT NULL, -- PK
     invoiceDate DATE,
     roomCharge DECIMAL(6,2),
     foodCharge DECIMAL(6,2),
-    guestID VARCHAR(20), --  FK to Guest.guestID
-    PRIMARY KEY(invoiceNum)
+    guestID VARCHAR(20) --  FK to Guest.guestID
 );
 
 CREATE TABLE Reservation(
-    bookNumber INT NOT NULL AUTO_INCREMENT, -- PK
+    bookNumber INT NOT NULL, -- PK
     beginDate DATE,
     endDate DATE,
     guestID VARCHAR(20), --  FK to Guest.guestID
-    roomNum INT, -- FK to Room.roomNumber
-    PRIMARY KEY(bookNumber)
+    roomNum INT -- FK to Room.roomNumber
 );
 
 CREATE TABLE Room(
@@ -38,12 +35,11 @@ CREATE TABLE Room(
 );
 
 CREATE TABLE Orders(
-    orderNumber INT NOT NULL AUTO_INCREMENT, -- PK
-    guestID VARCHAR(20), -- FK to Guest.guestID
-    PRIMARY KEY(orderNumber)
+    orderNumber INT NOT NULL, -- PK
+    guestID VARCHAR(20) -- FK to Guest.guestID
 );
 
-CREATE TABLE Produces(
+CREATE TABLE Contain(
     orderNumber INT NOT NULL, -- PK & FK to Orders.orderNumber
     foodID INT NOT NULL, -- PK & FK to Food.foodID
     quantity INT NOT NULL
@@ -63,7 +59,7 @@ CREATE TABLE Employee(
     employeeLName VARCHAR(20) NOT NULL,
     employeeDOB DATE,
     employeeSalary INT,
-    employeePassword VARCHAR(72) NOT NULL, -- becrypt
+	employeePassword VARCHAR(72) NOT NULL, -- depending on  the encryption 
     dno INT NOT NULL -- FK to Department.departmentNumber
 );
 
@@ -74,12 +70,45 @@ CREATE TABLE Department(
 );
 
 -- assigning PK to each table --
--- ALTER TABLE Guest ADD CONSTRAINT PK_Guest_ID PRIMARY KEY(guestID);
--- ALTER TABLE Invoice ADD CONSTRAINT PK_Invoicec_Num PRIMARY KEY(invoiceNum);
--- ALTER TABLE Reservation ADD CONSTRAINT PK_Reservation_Num PRIMARY KEY(bookNumber);
+ALTER TABLE Guest ADD CONSTRAINT PK_Guest_ID PRIMARY KEY(guestID);
+ALTER TABLE Invoice ADD CONSTRAINT PK_Invoicec_Num PRIMARY KEY(invoiceNum);
+ALTER TABLE Reservation ADD CONSTRAINT PK_Reservation_Num PRIMARY KEY(bookNumber);
 ALTER TABLE Room ADD CONSTRAINT PK_Room_Num PRIMARY KEY(roomNumber);
--- ALTER TABLE Orders ADD CONSTRAINT PK_Order_Num PRIMARY KEY(orderNumber);
-ALTER TABLE Produces ADD CONSTRAINT PK_Produce_orNum_fID PRIMARY KEY(orderNumber, foodID);
--- ALTER TABLE Food ADD CONSTRAINT PK_Food_ID PRIMARY KEY(foodID);
--- ALTER TABLE Employee ADD CONSTRAINT PK_Employee_SSN PRIMARY KEY(employeeSSN);
--- ALTER TABLE Department ADD CONSTRAINT PK_Department_Num PRIMARY KEY(departmentNumber);
+ALTER TABLE Orders ADD CONSTRAINT PK_Order_Num PRIMARY KEY(orderNumber);
+ALTER TABLE Contain ADD CONSTRAINT PK_Contain_orNum_fID PRIMARY KEY(orderNumber, foodID);
+ALTER TABLE Food ADD CONSTRAINT PK_Food_ID PRIMARY KEY(foodID);
+ALTER TABLE Employee ADD CONSTRAINT PK_Employee_SSN PRIMARY KEY(employeeSSN);
+ALTER TABLE Department ADD CONSTRAINT PK_Department_Num PRIMARY  KEY(departmentNumber);
+
+-- assigning AUTO_INCREMENT to certain PK --
+ALTER TABLE Orders CHANGE orderNumber  orderNumber INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE invoice CHANGE invoiceNum  invoiceNum INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE reservation CHANGE bookNumber  bookNumber INT NOT NULL AUTO_INCREMENT;
+
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `createGuest`(IN guestID varchar(20), IN guestFName varchar(20), IN guestLName varchar(20), IN guestPhoneNumber char(10), IN guestPassword varchar(72))
+BEGIN
+	INSERT INTO Guest (guestID, guestFname, guestLName, guestPhoneNumber, guestPassword) VALUES (guestID, guestFName, guestLName, guestPhoneNumber, guestPassword);
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getGuestPassword`(IN guest_id VARCHAR(20))
+BEGIN
+	SELECT guestPassword From Guest WHERE guestID = guest_id;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `createEmployee`(IN employeeID INT, IN employeeSSN CHAR(9), IN employeeFName VARCHAR(20), IN employeeLName VARCHAR(20), IN employeeDOB VARCHAR(20), IN employeeSalary INT, IN employeePassword VARCHAR(72), IN dno INT)
+BEGIN
+	INSERT INTO Employee (employeeID, employeeSSN, employeeFName, employeeLName, employeeDOB, employeeSalary, employeePassword, dno) VALUES (employeeID, employeeSSN, employeeFName, employeeLName, employeeDOB, employeeSalary, employeePassword, dno);
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getEmployeePassword`(IN employee_ID INT)
+BEGIN
+	SELECT employeePassword FROM Employee WHERE employeeID = employee_ID;
+END //
+DELIMITER ;

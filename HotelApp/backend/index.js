@@ -282,6 +282,102 @@ app.post('/invoice', function(req,res){
     });
 });
 
+//--------------------FOOD ORDER --------------------//
+/*==================================== modefied here ==============================================*/
+/* Hey Sean~~ The guest_id in the POST should be replaced by the guest_id from logged-in session */
+/* Pardis said there is a global var guest_id defined at the top. We can use it. */
+/*=============================*/ 
+// Food Order Get
+app.get('/FoodOrder', function(req, res){
+    var sql = "SELECT * from food;";
+    con.query(sql, function(err, result){
+        if (err)
+        {
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+
+            res.end("Error while reading food menu..!");
+            console.log("Error while reading food menu..!");
+            console.log(err);
+        }
+        else
+        {
+            res.send(result);
+        }
+    });
+});
+
+// Food Oder Post
+app.post('/FoodOrder', function(req, res){
+
+    // whole order insertion should be a transaction //
+    con.beginTransaction(function(err) {
+        if (err) {throw err;}
+        
+        // insert (guest_id, order_number) to "orders table" //
+        var sql = "INSERT INTO orders(guestID) VALUES (" +
+            mysql.escape(req.body.guest_id) + ");";
+        //console.log(sql);
+        con.query(sql, function(err, result){
+            if (err)
+            {
+                res.writeHead(400, {
+                    'Content-Type': 'text/plain'
+                })
+                res.end("Error while creating orders..!");
+                console.log("Error while creating orders..!");
+                console.log(err);
+            }
+            else
+            {
+                // and get auto-increment order_number //
+                sql = "SELECT MAX(orderNumber) as ord FROM orders WHERE guestID=" + 
+                    mysql.escape(req.body.guest_id) + ";";
+                    //console.log(sql);
+                con.query(sql, function(err, result){
+                    if (err)
+                    {
+                        res.end("Error while retrieving order ID..!");
+                        console.log("Error while retrieving order ID..!");
+                        console.log(err);
+                    }
+                    else
+                    {   
+                        // only max/latest order number returned //
+                        var ord_num = result[0].ord;
+                        // insert each (order_number) to "Contain table" //
+                        for(var key in req.body.orders){
+                            var value = req.body.orders[key];
+                            if(value<=0){ continue; } // filtered which value=0
+                            else
+                            {
+                                sql = "INSERT INTO Contain VALUES (" + ord_num + ", " + key + ", " + value + ");";
+                                //console.log(sql);
+                                con.query(sql, function(err, result){
+                                    if(err){
+                                        res.end("Error while inserting order elements..!");
+                                        console.log("Error while inserting order elements..!");
+                                        console.log(err);
+                                    }
+                                });
+                            }
+                        }
+                        res.send("insert finished");
+                        // commit if txn is successful //
+                        con.commit(function(err) {
+                            if (err) { 
+                                con.rollback(function() {throw err;});
+                            }
+                            console.log('Transaction Complete.');
+                        });
+                    }
+                });
+            }
+        });
+    });
+});
+
 
 /*******************************************************/
 /*********************** front desk ********************/

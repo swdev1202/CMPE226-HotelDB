@@ -25,6 +25,8 @@ import ReservationManage from './Employee/ReservationManage';
 import InvoiceManage from './Employee/InvoiceManage';
 import OrderManage from './Employee/OrderManage';
 
+import FoodOrder from './FoodOrder/FoodOrder';
+
 class Main extends Component
 {
     render()
@@ -49,6 +51,7 @@ class Main extends Component
                 <Route path = "/frontdesk/manage-reservation" component = {ReservationManage} />
                 <Route path = "/frontdesk/manage-invoice" component = {InvoiceManage} />
                 <Route path = "/frontdesk/manage-order" component = {OrderManage} />
+                <Route path = "/FoodOrder" component = {FoodOrder} />
             </div>
         )
     }
