@@ -6,9 +6,11 @@ INSERT INTO department VALUES
 
 -- loading employee --
 INSERT INTO employee VALUES
-(1, '423463105', 'Paul', 'Meyer', '1973-09-01', 76000, 'password', 1),
-(2, '669058470', 'Syeda', 'Welch', '1975-02-03', 98200, 'password', 0);
-   
+(1, '423463105', 'Paul', 'Meyer', '1973-09-01', 76000, 'e01940e39040aead3e0f46a8031679b1f676612dda', 1), -- password = encrypt(test1)
+(2, '669058470', 'Syeda', 'Welch', '1975-02-03', 98200, '654603ffae6ae668193bb182007efc578f3fda0a51', 0), -- password = encrypt(test2)
+(3, '776323566', 'Paula', 'Taylor',	'1977-05-09', 82000, 'c9be97730f737b56ea62b69a792a8dc36815a2eec0e2', 0), -- password = encrypt(taylor)
+(4, '276398473', 'John', 'Silver', '1983-05-09', 84800, '4e57c2ee1fc151485dcc358e2346e68b679cce022479', 1); -- password = encrypt(silver)
+
 ALTER TABLE Employee ADD CONSTRAINT FK_Employee_Dept_Num FOREIGN KEY(dno) REFERENCES Department(departmentNumber)  ON DELETE CASCADE  ON UPDATE CASCADE;
 ALTER TABLE Department ADD CONSTRAINT FK_Manager_SSN FOREIGN KEY(manager_SSN) REFERENCES Employee(employeeSSN)  ON DELETE CASCADE  ON UPDATE CASCADE;
 
@@ -17,7 +19,8 @@ INSERT INTO Guest VALUES
 ('cmpe226', 'Kong', 'Li', '4803556262', '5e6e6bf44c442ef5758a0da4d0dac2a832b6e41305f0b0fa'),
 ('pardis', 'Pardis', 'Tashakori', '3335551212', 'be55a59e7b6f99cd8469d659ec3fb75ec6817938cdf2'),
 ('dave', 'Tai-Chun', 'Wei', '7773331212', 'cd810133b8114dc285de99d140432274c016780d6761'),
-('sean', 'Sean', 'Lee', '3102935959', '8b87e1aead6ccf5df71318a3fb384789b71c081c');
+('sean', 'Sean', 'Lee', '3102935959', '8b87e1aead6ccf5df71318a3fb384789b71c081c'),
+('sjsu', 'san', 'jose', '4089241000', 'ea4a3c7d991f23ecb152b9f4292f94d013fceab1');
 
 
 -- loading room --
@@ -60,6 +63,11 @@ INSERT INTO room VALUES
 (801, 'sui', 399.99, 0),
 (802, 'sui', 399.99, 0);
 -- std: 26, lux:8, sui: 2 --> total 36 --
+
+INSERT INTO Reservation (beginDate, endDate, guestID, roomNum) VALUES
+('2019-05-09', '2019-05-11', 'cmpe226', 101),
+('2019-05-22', '2019-05-23', 'cmpe226', 304),
+('2019-07-17', '2019-07-19', 'sean', 601);
 
 ALTER TABLE Reservation ADD CONSTRAINT FK_Reservation_Guest_ID FOREIGN KEY(guestID) REFERENCES Guest(guestID)  ON DELETE CASCADE  ON UPDATE CASCADE;
 ALTER TABLE Reservation ADD CONSTRAINT FK_Room_Num FOREIGN KEY(roomNum) REFERENCES Room(roomNumber)  ON DELETE CASCADE  ON UPDATE CASCADE;
