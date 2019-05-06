@@ -8,6 +8,8 @@ const Cryptr = require('cryptr');
 const cryptr = new Cryptr('secretKey');
 
 const fileUpload = require('express-fileupload');
+const { createLogger, format, transports } = require('winston');
+
 app.use(fileUpload());
 
 // allow access control
@@ -36,7 +38,7 @@ con.connect(function(err){
     }
     else
     {
-        console.log("Connected!");
+        logger.info("DB Connected");
     }
 })
 
@@ -48,11 +50,40 @@ app.get('/', function(req, res){
     res.send("Hello from index.js back end!");
 })
 
+const logger = createLogger({
+    level: 'info',
+    format: format.combine(
+      format.timestamp({
+        format: 'YYYY-MM-DD HH:mm:ss'
+      }),
+      format.errors({ stack: true }),
+      format.splat(),
+      format.json()
+    ),
+    defaultMeta: { service: 'hotel-db-backend' },
+    transports: [
+      //
+      // - Write to all logs with level `info` and below to `combined.log`
+      // - Write all logs error (and below) to `error.log`.
+      //
+      new transports.File({ filename: 'hotel_db_error.log', level: 'error' }),
+      new transports.File({ filename: 'hotel_db_combined.log' })
+    ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+    logger.add(new transports.Console({
+      format: format.combine(
+        format.colorize(),
+        format.simple()
+      )
+    }));
+}
 
 /******************************Sign-Up******************************/
 // GUEST CREATE BACKEND
 app.post('/create', function(req, res){
-    console.log("Hello from inside the post create backend..!");
+    logger.info('BACKEND CREATE USER');
 
     // first, encrypt our plain text password
     const encryptPassword = cryptr.encrypt(req.body.password);
@@ -68,13 +99,13 @@ app.post('/create', function(req, res){
     con.query(sql, function(err, result){
         if (err)
         {
+            logger.error(err);
             // HTTP 400
             res.writeHead(400, {
                 'Content-Type': 'text/plain'
             })
 
             res.end("Error while creating user..!");
-            console.log("Error while creating user..!");
         }
         else
         {
@@ -83,14 +114,14 @@ app.post('/create', function(req, res){
                 'Content-Type': 'text/plain'
             })
             res.end("User created successfully!");
-            console.log("User created successfully!");
+            logger.info('User Created Successfully');
         }
     })
 })
 
 // EMPLOYEE CREATE BACKEND
 app.post('/empcreate', function(req, res){
-    console.log("Hello from inside the post employee create back end.. ");
+    logger.info('BACKEND EMPLOYEE CREATION');
 
     // first, encrpyt a plain text password
     const encryptPassword = cryptr.encrypt(req.body.password);
@@ -109,12 +140,12 @@ app.post('/empcreate', function(req, res){
     con.query(sql, function(err, result){
         if (err)
         {
+            logger.error(err);
             // HTTP 400
             res.writeHead(400, {
                 'Content-Type': 'text/plain'
             })
             res.end("Error while creating employee..");
-            console.log("Error while creating employee!");
         }
         else
         {
@@ -123,14 +154,14 @@ app.post('/empcreate', function(req, res){
                 'Content-Type': 'text/plain'
             })
             res.end('Employee created successfully!');
-            console.log("Employee created successfully!");
+            logger.info('Employee Creation Success!');
         }
     })
 })
 
 // GUEST LOGIN BACKEND
 app.post('/login', function(req, res){
-    console.log("Hello from inside the post login back end.. ");
+    logger.info('BACKEND GUEST LOGIN');
 
     var guest_id = req.body.guest_id;
     var password = req.body.password;
@@ -141,14 +172,12 @@ app.post('/login', function(req, res){
     mysql.escape(guest) + ")";
     con.query(sql, function(err, result){
 
-        console.log(result);
+        logger.error('Error While Creating User...');
         // Decrypt the stored password to compare with given password
         const decryptPassword = cryptr.decrypt(result[0][0].guestPassword);
 
         if (password === decryptPassword)
         {
-            console.log("Valid password!");
-
             // Assigning this guest session
             res.cookie('cookie', req.body.guest_id, {maxAge: 900000, httpOnly: false, path : '/'});
             res.writeHead(200, {
@@ -156,29 +185,26 @@ app.post('/login', function(req, res){
             })
 
             res.end("Successful login");
-            console.log("Successful login!");
+            logger.info("Successful login!");
         }
         else
         {
-            console.log("Invalid password!");
-
             res.writeHead(400, {
                 'Content-Type': 'text/plain'
             })
 
             res.end("Invalid credentials");
-            console.log("Invalid credentials!");
+            logger.error("Invalid credentials!");
         }
     })
 })
 
 // EMPLOYEE LOGIN BACKEND
 app.post('/emplogin', function(req, res){
-    console.log("Hello from inside the post employee login back end.. ");
+    logger.info("BACKEND EMPLOYEE LOGIN");
 
     var emp_id = req.body.emp_id;
     var password = req.body.password;
-    // var employee = emp_id;
 
     var sql = "CALL getEmployeePassword (" + 
     mysql.escape(emp_id) + ")";
@@ -189,7 +215,6 @@ app.post('/emplogin', function(req, res){
 
         if (password === decryptPassword)
         {
-            console.log("Valid password!");
             // Give this employee a new session
             res.cookie('cookie', req.body.emp_id, {maxAge: 900000, httpOnly: false, path : '/'});
             res.writeHead(200, {
@@ -197,57 +222,59 @@ app.post('/emplogin', function(req, res){
             })
 
             res.end("Successful login");
-            console.log("Successful login!");
+            logger.info("Successful login!");
         }
         else
         {
-            console.log("Invalid password!");
-
             res.writeHead(400, {
                 'Content-Type': 'text/plain'
             })
 
             res.end("Invalid credentials");
-            console.log("Invalid credentials!");
+            logger.error("Invalid credentials!");
         }
     })
 })
 
 //---------------- GUEST RESERVTAION ------------------//
 app.post('/reservation/search', function(req, res){
+    logger.info('BACKEND RESERVATION SEARCH');
+
     var onlyDateCheckIn = req.body.checkInDate_cal.slice(0,10);
     var onlyDateCheckOut = req.body.checkOutDate_cal.slice(0,10);
-    console.log(onlyDateCheckIn, onlyDateCheckOut);
 
     var sql = "SELECT roomNumber, roomType, roomPrice FROM Room WHERE roomNumber NOT IN (SELECT roomNum FROM Reservation WHERE beginDate = ?)";
     con.query(sql, [onlyDateCheckIn], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
-            console.log(result);
             res.send(result);
         }
     });
 });
 
 app.post('/reservation/check', function(req, res){
+    logger.info('BACKEND RESERVATION CHECK');
     var guestid = req.body.guestid;
-    console.log(guestid);
 
     var sql = "SELECT * FROM Reservation WHERE guestID = ? ORDER BY beginDate ASC";
     con.query(sql, [guestid], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
-            console.log(result);
+            logger.info("RESERVATION CHECK SUCCESS");
             res.send(result);
         }
     });
 });
 
 app.post('/reservation/make', function(req,res){
+    logger.info('BACKEND RESERVATION MAKE');
+
     var onlyDateCheckIn = req.body.checkInDate_cal.slice(0,10);
     var onlyDateCheckOut = req.body.checkOutDate_cal.slice(0,10);
     var userID = req.body.userID;
@@ -257,9 +284,11 @@ app.post('/reservation/make', function(req,res){
     var sql = "INSERT INTO Reservation (beginDate, endDate, guestID, roomNum) VALUES (?,?,?,?)";
     con.query(sql, [onlyDateCheckIn, onlyDateCheckOut, userID, roomNum], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
+            logger.info("RESERVATION MAKE SUCCESS");
             res.send("Insertion Success!");
         }
     });
@@ -267,16 +296,17 @@ app.post('/reservation/make', function(req,res){
 
 //----------------- GUEST INVOICE ---------------------//
 app.post('/invoice', function(req,res){
+    logger.info('BACKEND INVOICE VIEW');
     var userID = req.body.guestid;
-    console.log(userID);
 
     var sql = "SELECT * FROM Invoice WHERE guestID = ? ORDER BY invoiceDate ASC"
     con.query(sql, [userID], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
-            console.log(result);
+            logger.info("INVOICE VIEW SUCCESS");
             res.send(result);
         }
     });
@@ -286,23 +316,25 @@ app.post('/invoice', function(req,res){
 /*==================================== modefied here ==============================================*/
 /* Hey Sean~~ The guest_id in the POST should be replaced by the guest_id from logged-in session */
 /* Pardis said there is a global var guest_id defined at the top. We can use it. */
-/*=============================*/ 
+/*=============================*/
+
 // Food Order Get
 app.get('/FoodOrder', function(req, res){
+    logger.info('BACKEND FOOD ORDER GET');
+
     var sql = "SELECT * from food;";
     con.query(sql, function(err, result){
         if (err)
         {
+            logger.error(err);
             res.writeHead(400, {
                 'Content-Type': 'text/plain'
             })
-
             res.end("Error while reading food menu..!");
-            console.log("Error while reading food menu..!");
-            console.log(err);
         }
         else
         {
+            logger.info("Food Order Get Success")
             res.send(result);
         }
     });
@@ -310,10 +342,14 @@ app.get('/FoodOrder', function(req, res){
 
 // Food Oder Post
 app.post('/FoodOrder', function(req, res){
-
+    logger.info('BACKEND FOOD ORDER POST');
     // whole order insertion should be a transaction //
     con.beginTransaction(function(err) {
-        if (err) {throw err;}
+        if (err) 
+        {
+            logger.error(err);
+            throw err;
+        }
         
         // insert (guest_id, order_number) to "orders table" //
         var sql = "INSERT INTO orders(guestID) VALUES (" +
@@ -322,12 +358,11 @@ app.post('/FoodOrder', function(req, res){
         con.query(sql, function(err, result){
             if (err)
             {
+                logger.error(err);
                 res.writeHead(400, {
                     'Content-Type': 'text/plain'
                 })
                 res.end("Error while creating orders..!");
-                console.log("Error while creating orders..!");
-                console.log(err);
             }
             else
             {
@@ -338,9 +373,8 @@ app.post('/FoodOrder', function(req, res){
                 con.query(sql, function(err, result){
                     if (err)
                     {
+                        logger.error(err);
                         res.end("Error while retrieving order ID..!");
-                        console.log("Error while retrieving order ID..!");
-                        console.log(err);
                     }
                     else
                     {   
@@ -356,20 +390,19 @@ app.post('/FoodOrder', function(req, res){
                                 //console.log(sql);
                                 con.query(sql, function(err, result){
                                     if(err){
+                                        logger.error(err);
                                         res.end("Error while inserting order elements..!");
-                                        console.log("Error while inserting order elements..!");
-                                        console.log(err);
                                     }
                                 });
                             }
                         }
                         res.send("insert finished");
-                        // commit if txn is successful //
                         con.commit(function(err) {
-                            if (err) { 
+                            if (err) {
+                                logger.error(err);
                                 con.rollback(function() {throw err;});
                             }
-                            console.log('Transaction Complete.');
+                            logger.info("TRANSACTION COMPLETED");
                         });
                     }
                 });
@@ -386,13 +419,16 @@ app.post('/FoodOrder', function(req, res){
 //--------------------------rooms----------------------//
 // view rooms
 app.get('/frontdesk/view-room', function(req, res){
+    logger.info('FRONTDESK VIEWING ROOMS REQUESTED');
     var sql = "SELECT * FROM Room ORDER BY roomNumber ASC";
     con.query(sql, function(err, result) {
-        if (err) {
+        if (err) 
+        {
+            logger.error(err);
             throw err;
         }
         else{
-            console.log(result);
+            logger.info('FRONTDESK VIEWING SUCCESS');
             res.send(result);
         }
     });
@@ -400,18 +436,19 @@ app.get('/frontdesk/view-room', function(req, res){
 
 // update rooms
 app.post('/frontdesk/update-room', function(req, res){
+    logger.info('FRONTDESK UPDATE ROOM');
     var roomNum = req.body.roomNumber;
     var newStatus = req.body.newStatus;
-    console.log(roomNum, newStatus)
 
     var sql = "UPDATE Room SET roomStatus=? WHERE roomNumber=?";
     con.query(sql, [newStatus, roomNum], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
             var message = "Room Status Change Successful";
-            console.log(message);
+            logger.info(message);
             res.send(message);
         }
     });
@@ -420,14 +457,15 @@ app.post('/frontdesk/update-room', function(req, res){
 //--------------------------reservations----------------------//
 // view reservations
 app.get('/frontdesk/view-reservation', function(req, res){
-    console.log("Reservation status request from the frontdesk");
+    logger.info('FRONTDESK VIEWING RESERVATIONS');
     var sql = "SELECT * FROM Reservation ORDER BY bookNumber ASC";
     con.query(sql, function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
-            console.log(result);
+            logger.info("FRONTDEST VIEW RESERVATION SUCCESS");
             res.send(result);
         }
     });
@@ -435,36 +473,38 @@ app.get('/frontdesk/view-reservation', function(req, res){
 
 // update reservations
 app.post('/frontdesk/update-reservation', function(req, res){
+    logger.info("FRONTDESK UPDATE RESERVATION")
     var roomNum = req.body.roomNumber;
     var bookNum = req.body.bookNumber;
-    console.log(bookNum, roomNum)
 
     var sql = "UPDATE Reservation SET roomNum=? WHERE bookNumber=?";
     con.query(sql, [roomNum, bookNum], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
-            console.log(result);
+            logger.info("FRONTDESK RESERVATION UPDATE SUCCESS");
         }
     });
 });
 
 // insert reservations
 app.post('/frontdesk/insert-reservation', function(req, res){
+    logger.info("FRONTDESK INSERT RESERVATION")
     var checkin = req.body.checkIn;
     var checkout = req.body.checkOut;
     var guestid = req.body.guestId;
     var roomnum = req.body.roomNum;
 
-    console.log(checkin, checkout, guestid, roomnum);
-
     var sql = "INSERT INTO Reservation (beginDate, endDate, guestID, roomNum) VALUES (?,?,?,?)";
     con.query(sql, [checkin, checkout, guestid, roomnum], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
+            logger.info("FRONTDESK INSERT RESERVATION SUCCESS");
             res.send("Inserted New Reservation!");
         }
     });
@@ -472,17 +512,18 @@ app.post('/frontdesk/insert-reservation', function(req, res){
 
 // delete reservations (manager)
 app.post('/frontdesk/delete-reservation', function(req, res){
+    logger.info("FRONTDESK RESERVATION DELETE");
     var res_num = req.body.reservation_number
-    console.log(res_num)
 
     var sql = "DELETE FROM Reservation WHERE bookNumber=?";
     con.query(sql, [res_num], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
             var message = "DELETE successfully"
-            console.log(message);
+            logger.info(message);
             res.send(message);
         }
     });
@@ -492,13 +533,15 @@ app.post('/frontdesk/delete-reservation', function(req, res){
 
 // view invoice
 app.get('/frontdesk/view-invoice', function(req, res){
+    logger.info("FRONTDESK INVOICE VIEW");
     var sql = "SELECT * FROM Invoice ORDER BY invoiceNum ASC";
     con.query(sql, function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
-            console.log(result);
+            logger.info("FRONTDESK INVOICE VIEW SUCCESS");
             res.send(result);
         }
     });
@@ -506,21 +549,21 @@ app.get('/frontdesk/view-invoice', function(req, res){
 
 // insert invoice
 app.post('/frontdesk/insert-invoice', function(req, res){
+    logger.info("FRONTDESK INVOICE INSERT");
     var guestID = req.body.guestID;
     var invoiceDate = req.body.invoiceDate;
     var roomCharge = req.body.roomCharge;
     var foodCharge = req.body.foodCharge;
 
-    console.log(guestID, invoiceDate, roomCharge, foodCharge);
-
     var sql = "INSERT INTO Invoice (invoiceDate, roomCharge, foodCharge, guestID) VALUES (?,?,?,?)";
     con.query(sql, [invoiceDate, roomCharge, foodCharge, guestID], function(err, result) {
         if (err) {
+            logger.err(err);
             throw err;
         }
         else{
             var message = "Inserted New Invoice!";
-            console.log(message);
+            logger.info(message);
             res.send(message);
         }
     });
@@ -528,21 +571,21 @@ app.post('/frontdesk/insert-invoice', function(req, res){
 
 // update invoice
 app.post('/frontdesk/update-invoice', function(req, res){
+    logger.info("FRONTDESK INVOICE UPATE");
     var invoiceNum = req.body.invoice_num;
     var invoiceDate = req.body.invoiceDate;
     var roomCharge = req.body.roomCharge;
     var foodCharge = req.body.foodCharge;
 
-    console.log(invoiceNum, invoiceDate, roomCharge, foodCharge);
-
     var sql = "UPDATE Invoice SET invoiceDate=?, roomCharge=?, foodCharge=? WHERE invoiceNum=?";
     con.query(sql, [invoiceDate, roomCharge, foodCharge, invoiceNum], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
             var message = "Updated Invoice!";
-            console.log(message);
+            logger.info(message);
             res.send(message);
         }
     });
@@ -550,17 +593,18 @@ app.post('/frontdesk/update-invoice', function(req, res){
 
 // delete invoice (manager)
 app.post('/frontdesk/delete-invoice', function(req, res){
+    logger.info("FRONTDESK INVOICE DELETE");
     var invoiceNum = req.body.invoice_num
-    console.log(invoiceNum)
 
     var sql = "DELETE FROM Invoice WHERE invoiceNum=?";
     con.query(sql, [invoiceNum], function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
             var message = "DELETE successfully"
-            console.log(message);
+            logger.info(message);
             res.send(message);
         }
     });
@@ -570,19 +614,20 @@ app.post('/frontdesk/delete-invoice', function(req, res){
 //--------------------------orders----------------------//
 // view orders
 app.get('/frontdesk/view-order', function(req, res){
-    console.log("Order status request from the frontdesk");
-    var sql = "SELECT * FROM Orders as O JOIN Produces as P WHERE O.orderNumber = P.orderNumber";
+    logger.info("FRONTDESK VIEW ORDERS")
+    var sql = "SELECT * FROM FOOD_ORDER";
     con.query(sql, function(err, result) {
         if (err) {
+            logger.error(err);
             throw err;
         }
         else{
-            console.log(result);
+            logger.info("FRONTDESK VIEW ORDER SUCCESS");
             res.send(result);
         }
     });
 });
 
 app.listen(3001, function(req, res){
-    console.log("Port 3001 is open and ready!");
+    logger.info("Port 3001 is open and ready!");
 });

@@ -53,7 +53,7 @@ CREATE TABLE Food(
 );
 
 CREATE TABLE Employee(
-    employeeID INT NOT NULL,
+    employeeID INT NOT NULL UNIQUE,
     employeeSSN CHAR(9) NOT NULL, -- PK (reflect this change on ERD)
     employeeFName VARCHAR(20) NOT NULL,
     employeeLName VARCHAR(20) NOT NULL,
@@ -110,5 +110,55 @@ DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getEmployeePassword`(IN employee_ID INT)
 BEGIN
 	SELECT employeePassword FROM Employee WHERE employeeID = employee_ID;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE select_parameters_for_invoice()
+BEGIN
+	DECLARE _gid VARCHAR(20);
+    DECLARE _date DATE;
+    DECLARE _price DECIMAL(6,2);
+    
+	SELECT guestID, endDate, (endDate - beginDate) * roomPrice as RoomCharge INTO _gid, _date, _price
+	FROM Reservation as reserve
+	JOIN Room as room WHERE reserve.roomNum = room.roomNumber
+	ORDER BY bookNumber DESC
+	LIMIT 1;
+    
+    INSERT INTO Invoice (invoiceDate, roomCharge, foodCharge, guestID) VALUES (_date, _price, 0, _gid);
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER after_reservation_insert
+	AFTER INSERT ON Reservation
+    FOR EACH ROW
+BEGIN
+	CALL select_parameters_for_invoice;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE get_total_order_price()
+BEGIN
+	DECLARE _totalprice DEC(6,2);
+    DECLARE _gid VARCHAR(20);
+
+	SELECT guestID, SUM(quantity * foodPrice) INTO _gid, _totalprice
+	FROM FOOD_ORDER
+	JOIN Food ON FOOD_ORDER.foodID = Food.foodID
+	WHERE orderNumber IN (SELECT MAX(orderNumber) FROM Orders);
+    
+    UPDATE Invoice SET foodCharge = _totalprice WHERE guestID = _gid;
+END //
+DELIMITER //
+
+DELIMITER //
+CREATE TRIGGER after_food_order_insert
+	AFTER INSERT ON Contain
+    FOR EACH ROW
+BEGIN
+	CALL get_total_order_price;
 END //
 DELIMITER ;

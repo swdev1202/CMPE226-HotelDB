@@ -12,7 +12,14 @@ INSERT INTO employee VALUES
 ALTER TABLE Employee ADD CONSTRAINT FK_Employee_Dept_Num FOREIGN KEY(dno) REFERENCES Department(departmentNumber)  ON DELETE CASCADE  ON UPDATE CASCADE;
 ALTER TABLE Department ADD CONSTRAINT FK_Manager_SSN FOREIGN KEY(manager_SSN) REFERENCES Employee(employeeSSN)  ON DELETE CASCADE  ON UPDATE CASCADE;
 
-   
+-- loading guests --
+INSERT INTO Guest VALUES
+('cmpe226', 'Kong', 'Li', '4803556262', '5e6e6bf44c442ef5758a0da4d0dac2a832b6e41305f0b0fa'),
+('pardis', 'Pardis', 'Tashakori', '3335551212', 'be55a59e7b6f99cd8469d659ec3fb75ec6817938cdf2'),
+('dave', 'Tai-Chun', 'Wei', '7773331212', 'cd810133b8114dc285de99d140432274c016780d6761'),
+('sean', 'Sean', 'Lee', '3102935959', '8b87e1aead6ccf5df71318a3fb384789b71c081c');
+
+
 -- loading room --
 -- separate room status into differnt table ---
 INSERT INTO room VALUES
