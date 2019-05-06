@@ -120,7 +120,7 @@ class InvoiceManage extends Component
                                 {this.state.invoice_table.map(detail =>
                                     <tr key = {detail.invoiceNum}>
                                         <td>{detail.invoiceNum}</td>
-                                        <td>{detail.invoiceDate}</td>
+                                        <td>{detail.invoiceDate.slice(0,10)}</td>
                                         <td>{detail.guestID}</td>
                                         <td>{detail.roomCharge}</td>
                                         <td>{detail.foodCharge}</td>

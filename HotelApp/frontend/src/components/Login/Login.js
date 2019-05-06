@@ -28,21 +28,21 @@ class Login extends Component
         })
     }
 
-    guest_idHandler = (e) => 
+    guest_idHandler = (e) =>
     {
         this.setState({
             guest_id: e.target.value
         })
     }
 
-    passwordHandler = (e) => 
+    passwordHandler = (e) =>
     {
         this.setState({
             password: e.target.value
         })
     }
 
-    submitLogin = (e) => 
+    submitLogin = (e) =>
     {
         e.preventDefault();
 
@@ -55,22 +55,21 @@ class Login extends Component
         axios.defaults.withCredentials = true;
 
         axios.post('http://localhost:3001/login', data)
-            .then(response => {
-                console.log("Status code: ", response.status);
+        .then(response => {
+            console.log("Status code: ", response.status);
 
-                if (response.status === 200)
-                {
-                    this.setState({
-                        authFlag: true
-                    })
-                }
-                else
-                {
-                    this.setState({
-                        authFlag: false
-                    })
-                }
-            });
+            if (response.status === 200){
+                this.setState({
+                    authFlag: true
+                })
+            }
+            else{
+                this.setState({
+                    authFlag: false
+                })
+            }
+        });
+        
     }
 
     render()
@@ -84,28 +83,28 @@ class Login extends Component
 
         return(
             <div>
-                {redirectVar}
+               
 
-                <div className = "container">
-                    <div className = "login-form">
-                        <div className = "main-div">
-                            <div className = "panel">
-                                <h2>Login:</h2>
-                                <p>Please enter your Guest ID and password below:</p>
-                            </div>
-
-                            <div className = "form-group">
-                                <input onChange = {this.guest_idHandler} type = "text" className = "form-control" name = "guest_id" placeholder = "Guest ID" required />
-                            </div>
-
-                            <div className = "form-group">
-                                <input onChange = {this.passwordHandler} type = "password" className = "form-control" name = "password" placeholder = "Password" required />
-                            </div>
-
-                            <button onClick = {this.submitLogin} className = "btn btn-primary">Login</button>
+            <div class = "container">
+                <div class = "login-form">
+                    <div class = "main-div">
+                        <div class = "panel">
+                            <h2>Guest Login:</h2>
+                            <p>Please enter your Guest ID and password:</p>
                         </div>
+
+                        <div class = "form-group">
+                            <input onChange = {this.guest_idHandler} type = "text" class = "form-control" name = "guest_id" placeholder = "Guest ID" required />
+                        </div>
+
+                        <div class = "form-group">
+                            <input onChange = {this.passwordHandler} type = "password" class = "form-control" name = "password" placeholder = "Password" required/>
+                        </div>
+
+                        <button onClick = {this.submitLogin} class = "btn btn-primary">Login</button>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }

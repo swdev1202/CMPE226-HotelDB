@@ -11,7 +11,7 @@ class GuestMain extends Component
                     <ul>
                         <li><Link to = "/reservation">Reservation</Link></li>
                         <li><Link to = "/invoice">Invoice</Link></li>
-                        <li><Link to = "/order">Food  Order</Link></li>
+                        <li><Link to = "/FoodOrder">Food  Order</Link></li>
                     </ul>
                 </div>
             </div>
