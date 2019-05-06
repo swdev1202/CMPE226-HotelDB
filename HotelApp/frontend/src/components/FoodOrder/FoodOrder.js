@@ -14,8 +14,6 @@ class FoodOrder extends Component
             response_data: [],
             orders: []
         }
-         
-        this.guest_idHandler = this.guest_idHandler.bind(this);
         this.food_quantityHandler = this.food_quantityHandler.bind(this);
         this.submitCreate = this.submitCreate.bind(this);
         
@@ -27,16 +25,6 @@ class FoodOrder extends Component
             })
     }
     
-
-    /*==== can be removed when integrating with guest logged-in session ====*/ 
-    guest_idHandler = (e) => {
-        this.setState({
-            guest_id: e.target.value
-        })
-    }
-    /*===================================================*/ 
-
-
     food_quantityHandler = (e) => {
         this.setState({
         orders: {...this.state.orders, [e.target.name]: e.target.value}
@@ -46,7 +34,7 @@ class FoodOrder extends Component
 
     submitCreate = (e) => {
         const data = {
-            guest_id: this.state.guest_id,
+            guest_id: "cmpe226", //this.state.guest_id,
             orders: this.state.orders
         }
         console.log(data);
@@ -57,13 +45,7 @@ class FoodOrder extends Component
     /*==== can be removed when integrating with guest logged-in session ====*/ 
     render(){
         return(
-            
             <div>
-                <div style = {{width: '30%'}} className = "form-group">
-                    user_id: <br />
-                    <input onChange = {this.guest_idHandler} type = "text" className = "form-control" name = "guest_id" placeholder = "user ID" required />
-                </div>
-
                 <br />
                 <h2>Food Menu</h2>
                 
@@ -96,7 +78,7 @@ class FoodOrder extends Component
 
                 <div style = {{width: '30%'}}>
                     <br />
-                    <button className = "btn btn-success" type = "submit" onClick = {this.submitCreate}>Submit Order</button>
+                    <button className = "btn btn-success" type="submit" onClick = {this.submitCreate}>Submit Order</button>
                 </div>
                 
                 <br />

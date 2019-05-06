@@ -16,7 +16,7 @@ class Invoice extends Component
     requestInvoice = (e) => {
         // first obtain the user id from the session management
         const data = {
-            guestid: 5
+            guestid: "cmpe226"
         }
 
         Axios.post("http://localhost:3001/invoice", data)
@@ -45,7 +45,7 @@ class Invoice extends Component
                     <tbody>
                         {this.state.invoice_list.map(detail =>
                             <tr key = {detail.invoiceNum}>
-                                <td>{detail.invoiceDate}</td>
+                                <td>{detail.invoiceDate.slice(0,10)}</td>
                                 <td>{detail.roomCharge}</td>
                                 <td>{detail.foodCharge}</td>
                             </tr>

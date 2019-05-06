@@ -28,6 +28,26 @@ class OrderManage extends Component
                 <h2>Order Manage Page</h2>
                 <div>
                     <button onClick={this.getAllOrders}>View Orders</button>
+                    <table border = "1px" className = "table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Guest ID</th>
+                                    <th>Order Number</th>
+                                    <th>Food ID</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.order_table.map(detail =>
+                                    <tr key = {detail.guestID}>
+                                        <td>{detail.guestID}</td>
+                                        <td>{detail.orderNumber}</td>
+                                        <td>{detail.foodID}</td>
+                                        <td>{detail.quantity}</td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
                 </div>
             </div>
         )

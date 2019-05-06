@@ -47,7 +47,7 @@ class Navbar extends Component
 
         return(
             <div>
-               
+               {redirectVar}
             <nav class = "navbar navbar-inverse">
                 <div class = "container-fluid">
                     <ul class = "nav navbar-nav">

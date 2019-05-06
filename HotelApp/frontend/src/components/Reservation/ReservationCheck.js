@@ -42,8 +42,8 @@ class ReservationCheck extends Component
                     <tbody>
                         {this.state.reservation_table.map(detail =>
                             <tr key = {detail.bookNumber}>
-                                <td>{detail.beginDate}</td>
-                                <td>{detail.endDate}</td>
+                                <td>{detail.beginDate.slice(0,10)}</td>
+                                <td>{detail.endDate.slice(0,10)}</td>
                                 <td>{detail.roomNum}</td>
                             </tr>
                          )}
