@@ -14,6 +14,7 @@ class Navbar extends Component
     handleLogout = () =>
     {
         cookie.remove('cookie', {path: '/'});
+        cookie.remove('emp', {path: '/'});
     }
 
     render()
@@ -23,7 +24,7 @@ class Navbar extends Component
 
         if (cookie.load('cookie'))
         {
-            console.log("Able to read cookie.. ");
+            console.log("Able to read cookie.. ");  
             navLogin = (
                 <ul className = "nav navbar-nav navbar-right">
                     <li><Link to = "/" onClick = {this.handleLogout}><span className = "glyphicon glyphicon-user"></span>Logout</Link></li>

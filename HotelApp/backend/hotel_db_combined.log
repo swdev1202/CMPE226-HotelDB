@@ -1,0 +1,178 @@
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:42:32"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:42:32"}
+{"message":"BACKEND CREATE USER","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:42:35"}
+{"message":"User Created Successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:42:35"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:43:46"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 08:43:46"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:43:46"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:45:40"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 08:45:40"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:45:40"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:45:47"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 08:45:47"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:45:47"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:45:54"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 08:45:54"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:45:54"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:46:11"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 08:46:11"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:46:11"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:52:09"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 08:52:09"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:52:09"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:56:44"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 08:56:44"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:56:44"}
+{"message":"BACKEND RESERVATION SEARCH","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:57:00"}
+{"message":"BACKEND RESERVATION MAKE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:57:16"}
+{"message":"RESERVATION MAKE SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:57:16"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:57:21"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:57:21"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:57:56"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:57:56"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:58:01"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 08:58:01"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:02:52"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 09:02:52"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:02:52"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:04:13"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 09:04:13"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:04:13"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:11:08"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 09:11:08"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:11:08"}
+{"message":"BACKEND RESERVATION MAKE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:11:18"}
+{"message":"RESERVATION MAKE SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:11:18"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:11:33"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:11:33"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:12:10"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:12:10"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:12:17"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:12:17"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:12:36"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:12:36"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:12:47"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:12:47"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:13:17"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:13:17"}
+{"message":"BACKEND FOOD ORDER POST","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:13:21"}
+{"message":"TRANSACTION COMPLETED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:13:21"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:13:45"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:13:45"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:14:06"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:20:25"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:20:25"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:20:28"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 09:20:28"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:21:24"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:21:24"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:21:37"}
+{"message":"Error While Creating User...","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 09:21:37"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:22:17"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:22:17"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:22:18"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:22:47"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:22:47"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:22:49"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:23:39"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:23:39"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:23:41"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:23:53"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:23:53"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:23:55"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:24:03"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:24:03"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:24:05"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:24:05"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:24:18"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:25:03"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:25:03"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:25:08"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:25:57"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:25:57"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:26:00"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:26:50"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:26:50"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:26:51"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 09:26:51"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:27:06"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-11 09:27:06"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:27:34"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:27:34"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:28:59"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:29:09"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:29:09"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:29:10"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:29:15"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:29:15"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:29:20"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:29:20"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:30:46"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:30:46"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:30:51"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:30:51"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:30:54"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:30:54"}
+{"message":"FRONTDESK RESERVATION DELETE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:31:02"}
+{"message":"DELETE successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:31:02"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:31:04"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:31:04"}
+{"message":"FRONTDESK VIEW ORDERS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:31:10"}
+{"message":"FRONTDESK VIEW ORDER SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:31:10"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:31:24"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:32:50"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:32:50"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:33:40"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:33:44"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:33:44"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:33:46"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:33:50"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:33:50"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:35:18"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:35:18"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:35:33"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:35:33"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:36:48"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:36:48"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:36:52"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:36:52"}
+{"message":"BACKEND RESERVATION SEARCH","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:03"}
+{"message":"BACKEND RESERVATION MAKE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:15"}
+{"message":"RESERVATION MAKE SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:15"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:18"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:18"}
+{"message":"BACKEND RESERVATION MAKE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:29"}
+{"message":"RESERVATION MAKE SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:29"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:32"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:32"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:40"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:40"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:54"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:37:54"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:38:52"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:38:52"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:39:25"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:39:25"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:39:32"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:39:32"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:40:08"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:40:08"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:41:00"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:41:00"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:41:04"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:41:04"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:41:10"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:41:14"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:41:14"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:24"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:24"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:27"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:27"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:40"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:40"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:42"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:42"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:44"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:44"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:45"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:45"}

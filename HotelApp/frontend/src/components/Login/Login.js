@@ -3,6 +3,7 @@ import '../../App.css';
 import axios from 'axios';
 import cookie from 'react-cookies';
 import {Redirect} from 'react-router';
+import Popup from 'react-popup';
 
 class Login extends Component
 {
@@ -64,6 +65,7 @@ class Login extends Component
                 })
             }
             else{
+                Popup.alert("Fail to log in")
                 this.setState({
                     authFlag: false
                 })

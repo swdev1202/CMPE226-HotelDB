@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
+import cookie from 'react-cookies';
 
 class Invoice extends Component
 {
@@ -16,7 +17,7 @@ class Invoice extends Component
     requestInvoice = (e) => {
         // first obtain the user id from the session management
         const data = {
-            guestid: "cmpe226"
+            guestid: cookie.load('cookie')
         }
 
         Axios.post("http://localhost:3001/invoice", data)
