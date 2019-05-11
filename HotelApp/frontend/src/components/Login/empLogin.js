@@ -83,7 +83,7 @@ class empLogin extends Component
 
         return(
             <div>
-              
+                {redirectVar}
             <div class = "container">
                 <div class = "login-form">
                     <div class = "main-div">
