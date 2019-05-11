@@ -171,8 +171,9 @@ app.post('/login', function(req, res){
     var sql = "CALL getGuestPassword ( " +
     mysql.escape(guest) + ")";
     con.query(sql, function(err, result){
-
-        logger.error('Error While Creating User...');
+        if(err){
+            logger.error(err);
+        }
         // Decrypt the stored password to compare with given password
         const decryptPassword = cryptr.decrypt(result[0][0].guestPassword);
 
@@ -217,6 +218,7 @@ app.post('/emplogin', function(req, res){
         {
             // Give this employee a new session
             res.cookie('cookie', req.body.emp_id, {maxAge: 900000, httpOnly: false, path : '/'});
+            res.cookie('emp', req.body.emp_id, {maxAge: 900000, httpOnly: false, path : '/'});
             res.writeHead(200, {
                 'Content-Type': 'text/plain'
             })

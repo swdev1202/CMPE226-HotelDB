@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
+import cookie from 'react-cookies';
 
 class ReservationCheck extends Component
 {
@@ -14,7 +15,7 @@ class ReservationCheck extends Component
 
     checkReservation = (e) => {
         const data = {
-            guestid: "cmpe226" // will be replaced with the current session's guest id
+            guestid: cookie.load('cookie')
         }
         Axios.post('http://localhost:3001/reservation/check', data)
         .then(response => {

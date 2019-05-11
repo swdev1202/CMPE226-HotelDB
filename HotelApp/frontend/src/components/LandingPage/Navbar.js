@@ -14,44 +14,40 @@ class Navbar extends Component
     handleLogout = () =>
     {
         cookie.remove('cookie', {path: '/'});
+        cookie.remove('emp', {path: '/'});
     }
 
     render()
     {
         let navLogin = null;
+        let redirectVar = null;
 
         if (cookie.load('cookie'))
         {
-            console.log("Able to read cookie.. ");
+            console.log("Able to read cookie.. ");  
             navLogin = (
-                <ul class = "nav navbar-nav navbar-right">
-                    <li><Link to = "/" onClick = {this.handleLogout}><span class = "glyphicon glyphicon-user"></span>Logout</Link></li>
+                <ul className = "nav navbar-nav navbar-right">
+                    <li><Link to = "/" onClick = {this.handleLogout}><span className = "glyphicon glyphicon-user"></span>Logout</Link></li>
                 </ul>
             )
+            redirectVar = <Redirect to = "/home"/>
         }
         else
         {
             console.log("Not able to read cookie! Try logging in.. ");
             navLogin = (
-                <ul class = "nav navbar-nav navbar-right">
-                    <li><Link to = "/login"><span class = "glyphicon glyphicon-log-in"></span>Guest Login</Link></li>
+                <ul className = "nav navbar-nav navbar-right">
+                    <li><Link to = "/login"><span className = "glyphicon glyphicon-log-in"></span>Guest Login</Link></li>
                 </ul>
             )
         }
 
-        let redirectVar = null;
-        if (cookie.load('cookie'))
-        {
-            redirectVar = <Redirect to = "/home"/>
-        }
-
         return(
             <div>
-               {redirectVar}
-            <nav class = "navbar navbar-inverse">
-                <div class = "container-fluid">
-                    <ul class = "nav navbar-nav">
-                        <li class = "active"><Link to = "/home">Home</Link></li>
+            <nav className = "navbar navbar-inverse">
+                <div className = "container-fluid">
+                    <ul className = "nav navbar-nav">
+                        <li className = "active"><Link to = "/home">Home</Link></li>
                         <li><Link to = "/create">Create Guest Account</Link></li>
                         <li><Link to = "/empcreate">Create Employee Account</Link></li>
                         <li><Link to = "/empLogin">Employee Login</Link></li>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
+import cookie from 'react-cookies';
 
 class FoodOrder extends Component
 {
@@ -34,7 +35,7 @@ class FoodOrder extends Component
 
     submitCreate = (e) => {
         const data = {
-            guest_id: "cmpe226", //this.state.guest_id,
+            guest_id: cookie.load('cookie'),
             orders: this.state.orders
         }
         console.log(data);

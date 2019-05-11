@@ -108,49 +108,49 @@ class empCreate extends Component
     render()
     {
         return(
-            <div class = "container">
-                <div class = "login-form">
-                    <div class = "main-div">
-                        <div class = "panel">
+            <div className = "container">
+                <div className = "login-form">
+                    <div className = "main-div">
+                        <div className = "panel">
                             <h2>Create a New Employee Account:</h2>
                             <p>Please enter the Employee's ID, SSN, first name, last name, DOB, salary, password and DNO:</p>
                         </div>
 
-                        <div class = "form-group">
-                            <input onChange = {this.emp_idHandler} type = "text" class = "form-control" name = "emp_id" placeholder = "Employee ID" />
+                        <div className = "form-group">
+                            <input onChange = {this.emp_idHandler} type = "text" className = "form-control" name = "emp_id" placeholder = "Employee ID" />
                         </div>
 
-                        <div class = "form-group">
-                            <input onChange = {this.ssn_Handler} type = "text" class = "form-control" name = "ssn" placeholder = "SSN" />
+                        <div className = "form-group">
+                            <input onChange = {this.ssn_Handler} type = "text" className = "form-control" name = "ssn" placeholder = "SSN" />
                         </div>
 
-                        <div class = "form-group">
-                            <input onChange = {this.firstname_Handler} type = "text" class = "form-control" name = "firstname" placeholder = "First name" />
+                        <div className = "form-group">
+                            <input onChange = {this.firstname_Handler} type = "text" className = "form-control" name = "firstname" placeholder = "First name" />
                         </div>
 
-                        <div class = "form-group">
-                            <input onChange = {this.lastname_Handler} type = "text" class = "form-control" name = "lastname" placeholder = "Last name" />
+                        <div className = "form-group">
+                            <input onChange = {this.lastname_Handler} type = "text" className = "form-control" name = "lastname" placeholder = "Last name" />
                         </div>
 
-                        <div class = "form-group">
-                            <input onChange = {this.dob_Handler} type = "text" class = "form-control" name = "dob" placeholder = "DOB" />
+                        <div className = "form-group">
+                            <input onChange = {this.dob_Handler} type = "text" className = "form-control" name = "dob" placeholder = "DOB" />
                         </div>
 
-                        <div class = "form-group">
-                            <input onChange = {this.salary_Handler} type = "text" class = "form-control" name = "salary" placeholder = "Salary" />
+                        <div className = "form-group">
+                            <input onChange = {this.salary_Handler} type = "text" className = "form-control" name = "salary" placeholder = "Salary" />
                         </div>
 
-                        <div class = "form-group">
-                            <input onChange = {this.password_Handler} type = "password" class = "form-control" name = "password" placeholder = "Password" />
+                        <div className = "form-group">
+                            <input onChange = {this.password_Handler} type = "password" className = "form-control" name = "password" placeholder = "Password" />
                         </div>
 
-                        <div class = "form-group">
-                            <input onChange = {this.dno_Handler} type = "text" class = "form-control" name = "dno" placeholder = "DNO" />
+                        <div className = "form-group">
+                            <input onChange = {this.dno_Handler} type = "text" className = "form-control" name = "dno" placeholder = "DNO" />
                         </div>
 
                         <br></br>
 
-                        <button onClick = {this.submitCreate} class = "btn btn-primary">Create Account</button>
+                        <button onClick = {this.submitCreate} className = "btn btn-primary">Create Account</button>
                     </div>
                 </div>
             </div>

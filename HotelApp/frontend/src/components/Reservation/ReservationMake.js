@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
 import Calendar from 'react-calendar';
+import cookie from 'react-cookies';
 
 class ReservationMake extends Component
 {
@@ -31,7 +32,7 @@ class ReservationMake extends Component
             checkInDate_cal: this.state.checkInDate_cal,
             checkOutDate_cal: this.state.checkOutDate_cal,
             roomNumber: this.state.roomNumber,
-            userID: "cmpe226"
+            userID: cookie.load('cookie')
         }
         Axios.post('http://localhost:3001/reservation/make', data)
         .then(response => {
