@@ -176,3 +176,366 @@
 {"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:44"}
 {"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:45"}
 {"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-11 09:42:45"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:29:31"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:29:31"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:42:47"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:44:15"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:44:15"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:44:17"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:44:17"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:44:26"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:44:26"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:44:36"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:46:48"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:46:48"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:46:50"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:47:07"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:47:07"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:47:09"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:49:03"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:49:03"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:49:07"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:49:51"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:49:51"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:49:53"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:50:53"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:50:53"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:50:56"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:51:42"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:51:42"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:51:44"}
+{"message":"No Credential Found","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:51:44"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:52:24"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:52:24"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:52:26"}
+{"message":"No Credential Found","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:52:26"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:52:34"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:52:34"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:01"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:01"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:05"}
+{"message":"No Credential Found","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:05"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:11"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:11"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:13"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:13"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:49"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:54:49"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:25"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:25"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:28"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:28"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:33"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:33"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:36"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:36"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:39"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:39"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:41"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 11:55:41"}
+{"message":"BACKEND CREATE USER","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:56:10"}
+{"message":"User Created Successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:56:10"}
+{"message":"BACKEND CREATE USER","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:57:24"}
+{"message":"User Created Successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:57:24"}
+{"message":"BACKEND CREATE USER","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:58:58"}
+{"message":"User Created Successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:58:58"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:59:45"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:59:45"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:59:53"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 11:59:53"}
+{"message":"BACKEND RESERVATION SEARCH","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:05"}
+{"message":"BACKEND RESERVATION MAKE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:21"}
+{"message":"RESERVATION MAKE SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:21"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:24"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:24"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:34"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:34"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:42"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:42"}
+{"message":"BACKEND FOOD ORDER POST","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:51"}
+{"message":"TRANSACTION COMPLETED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:51"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:57"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:00:57"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:01:14"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:01:14"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:01:16"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:01:16"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:01:21"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:01:21"}
+{"message":"FRONTDESK INSERT RESERVATION","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:01:43"}
+{"code":"ER_NO_REFERENCED_ROW_2","errno":1452,"sqlMessage":"Cannot add or update a child row: a foreign key constraint fails (`hotel`.`reservation`, CONSTRAINT `FK_Reservation_Guest_ID` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`) ON DELETE CASCADE ON UPDATE CASCADE)","sqlState":"23000","index":0,"sql":"INSERT INTO Reservation (beginDate, endDate, guestID, roomNum) VALUES ('2019-05-14','2019-05-15','dd','401')","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:01:44","message":"ER_NO_REFERENCED_ROW_2: Cannot add or update a child row: a foreign key constraint fails (`hotel`.`reservation`, CONSTRAINT `FK_Reservation_Guest_ID` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`) ON DELETE CASCADE ON UPDATE CASCADE)","stack":"Error: ER_NO_REFERENCED_ROW_2: Cannot add or update a child row: a foreign key constraint fails (`hotel`.`reservation`, CONSTRAINT `FK_Reservation_Guest_ID` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`) ON DELETE CASCADE ON UPDATE CASCADE)\n    at Query.Sequence._packetToError (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\sequences\\Sequence.js:47:14)\n    at Query.ErrorPacket (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\sequences\\Query.js:77:18)\n    at Protocol._parsePacket (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Protocol.js:291:23)\n    at Parser._parsePacket (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Parser.js:433:10)\n    at Parser.write (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Parser.js:43:10)\n    at Protocol.write (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Protocol.js:38:16)\n    at Socket.<anonymous> (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\Connection.js:91:28)\n    at Socket.<anonymous> (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\Connection.js:525:10)\n    at Socket.emit (events.js:189:13)\n    at addChunk (_stream_readable.js:284:12)\n    --------------------\n    at Protocol._enqueue (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Protocol.js:144:48)\n    at Connection.query (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\Connection.js:201:25)\n    at C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\index.js:537:9\n    at Layer.handle [as handle_request] (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\index.js:275:10)"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:03:55"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:03:55"}
+{"message":"FRONTDESK INSERT RESERVATION","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:06"}
+{"code":"ER_NO_REFERENCED_ROW_2","errno":1452,"sqlMessage":"Cannot add or update a child row: a foreign key constraint fails (`hotel`.`reservation`, CONSTRAINT `FK_Reservation_Guest_ID` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`) ON DELETE CASCADE ON UPDATE CASCADE)","sqlState":"23000","index":0,"sql":"INSERT INTO Reservation (beginDate, endDate, guestID, roomNum) VALUES ('2019-05-13','2019-05-14','ddd','102')","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:06","message":"ER_NO_REFERENCED_ROW_2: Cannot add or update a child row: a foreign key constraint fails (`hotel`.`reservation`, CONSTRAINT `FK_Reservation_Guest_ID` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`) ON DELETE CASCADE ON UPDATE CASCADE)","stack":"Error: ER_NO_REFERENCED_ROW_2: Cannot add or update a child row: a foreign key constraint fails (`hotel`.`reservation`, CONSTRAINT `FK_Reservation_Guest_ID` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`) ON DELETE CASCADE ON UPDATE CASCADE)\n    at Query.Sequence._packetToError (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\sequences\\Sequence.js:47:14)\n    at Query.ErrorPacket (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\sequences\\Query.js:77:18)\n    at Protocol._parsePacket (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Protocol.js:291:23)\n    at Parser._parsePacket (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Parser.js:433:10)\n    at Parser.write (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Parser.js:43:10)\n    at Protocol.write (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Protocol.js:38:16)\n    at Socket.<anonymous> (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\Connection.js:91:28)\n    at Socket.<anonymous> (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\Connection.js:525:10)\n    at Socket.emit (events.js:189:13)\n    at addChunk (_stream_readable.js:284:12)\n    --------------------\n    at Protocol._enqueue (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Protocol.js:144:48)\n    at Connection.query (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\Connection.js:201:25)\n    at C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\index.js:537:9\n    at Layer.handle [as handle_request] (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\index.js:275:10)"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:11"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:11"}
+{"message":"FRONTDESK INSERT RESERVATION","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:24"}
+{"code":"ER_NO_REFERENCED_ROW_2","errno":1452,"sqlMessage":"Cannot add or update a child row: a foreign key constraint fails (`hotel`.`reservation`, CONSTRAINT `FK_Reservation_Guest_ID` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`) ON DELETE CASCADE ON UPDATE CASCADE)","sqlState":"23000","index":0,"sql":"INSERT INTO Reservation (beginDate, endDate, guestID, roomNum) VALUES ('2019-05-03','2019-05-05','dsje','205')","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:24","message":"ER_NO_REFERENCED_ROW_2: Cannot add or update a child row: a foreign key constraint fails (`hotel`.`reservation`, CONSTRAINT `FK_Reservation_Guest_ID` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`) ON DELETE CASCADE ON UPDATE CASCADE)","stack":"Error: ER_NO_REFERENCED_ROW_2: Cannot add or update a child row: a foreign key constraint fails (`hotel`.`reservation`, CONSTRAINT `FK_Reservation_Guest_ID` FOREIGN KEY (`guestID`) REFERENCES `guest` (`guestID`) ON DELETE CASCADE ON UPDATE CASCADE)\n    at Query.Sequence._packetToError (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\sequences\\Sequence.js:47:14)\n    at Query.ErrorPacket (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\sequences\\Query.js:77:18)\n    at Protocol._parsePacket (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Protocol.js:291:23)\n    at Parser._parsePacket (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Parser.js:433:10)\n    at Parser.write (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Parser.js:43:10)\n    at Protocol.write (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Protocol.js:38:16)\n    at Socket.<anonymous> (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\Connection.js:91:28)\n    at Socket.<anonymous> (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\Connection.js:525:10)\n    at Socket.emit (events.js:189:13)\n    at addChunk (_stream_readable.js:284:12)\n    --------------------\n    at Protocol._enqueue (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\protocol\\Protocol.js:144:48)\n    at Connection.query (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\mysql\\lib\\Connection.js:201:25)\n    at C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\index.js:537:9\n    at Layer.handle [as handle_request] (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at Layer.handle [as handle_request] (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\Users\\swlee\\Desktop\\projects\\CMPE226-HotelDB\\HotelApp\\backend\\node_modules\\express\\lib\\router\\index.js:275:10)"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:32"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:32"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:34"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:34"}
+{"message":"FRONTDESK INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:36"}
+{"message":"FRONTDESK INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:36"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:44"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:04:44"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:09:56"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:09:56"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:09:58"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:09:58"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:10:07"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:10:07"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:10:09"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:10:09"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:10:16"}
+{"message":"Room Status Change Successful","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:10:16"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:10:18"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:10:18"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:12:56"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:12:56"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:13:04"}
+{"message":"Room Status Change Successful","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:13:04"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:14:29"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:14:29"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:14:34"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:14:58"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:14:58"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:01"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:07"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:07"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:21"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:21"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:30"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:36"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:36"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:43"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:47"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:15:47"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:16:12"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:16:12"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:16:17"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:17:23"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:17:23"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:17:27"}
+{"message":"Room Status Change Successful","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:17:27"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:17:30"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:17:30"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:17:36"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:17:39"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:17:39"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:08"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:08"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:14"}
+{"message":"Invalid Room Status","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:14"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:19"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:19"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:22"}
+{"message":"Room Status Change Successful","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:22"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:25"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:25"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:32"}
+{"message":"Room Status Change Successful","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:32"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:34"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:18:34"}
+{"message":"BACKEND CREATE USER","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:27:48"}
+{"message":"User Created Successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:27:48"}
+{"message":"BACKEND CREATE USER","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:29:46"}
+{"message":"User Created Successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:29:46"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:31:25"}
+{"message":"No Credential Found","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:31:25"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:31:55"}
+{"message":"No Credential Found","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:31:55"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:32:02"}
+{"message":"No Credential Found","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:32:02"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:32:22"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:32:22"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:32:30"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:32:30"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:32:52"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:32:52"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:33:15"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:33:15"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:33:18"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:33:18"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:33:49"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:33:49"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:33:58"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:33:58"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:35:25"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:35:25"}
+{"message":"BACKEND RESERVATION MAKE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:36:15"}
+{"message":"RESERVATION MAKE SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:36:15"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:36:19"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:36:19"}
+{"message":"BACKEND RESERVATION SEARCH","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:36:27"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:36:36"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:36:36"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:36:40"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:36:40"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:18"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:18"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:33"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:33"}
+{"message":"BACKEND FOOD ORDER POST","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:41"}
+{"message":"TRANSACTION COMPLETED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:41"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:41"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:41"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:45"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:45"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:53"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:53"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:56"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:37:56"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:00"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:00"}
+{"message":"FRONTDESK VIEW ORDERS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:48"}
+{"message":"FRONTDESK VIEW ORDER SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:48"}
+{"message":"FRONTDESK VIEW ORDERS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:54"}
+{"message":"FRONTDESK VIEW ORDER SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:54"}
+{"message":"FRONTDESK INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:56"}
+{"message":"FRONTDESK INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:56"}
+{"message":"FRONTDESK INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:57"}
+{"message":"FRONTDESK INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:38:57"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:51:13"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:51:13"}
+{"message":"BACKEND CREATE USER","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:10"}
+{"message":"User Created Successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:10"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:26"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:26"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:27"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:27"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:27"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:27"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:27"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:27"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:27"}
+{"message":"Invalid credentials!","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:27"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:33"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:33"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:42"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:42"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:43"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:43"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:43"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:43"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:44"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:45"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:45"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:45"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:45"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:46"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:46"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:46"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:46"}
+{"message":"BACKEND RESERVATION SEARCH","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:52:52"}
+{"message":"BACKEND RESERVATION MAKE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:12"}
+{"message":"RESERVATION MAKE SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:12"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:17"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:17"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:23"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:23"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:28"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:28"}
+{"message":"BACKEND FOOD ORDER POST","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:41"}
+{"message":"TRANSACTION COMPLETED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:41"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:42"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:42"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:48"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:53:48"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:03"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:03"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:08"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:08"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:31"}
+{"message":"Room Status Change Successful","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:31"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:33"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:33"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:43"}
+{"message":"Invalid Room Status","level":"error","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:43"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:44"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:44"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:52"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:54:53"}
+{"message":"FRONTDESK RESERVATION DELETE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:05"}
+{"message":"DELETE successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:05"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:07"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:07"}
+{"message":"FRONTDESK INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:10"}
+{"message":"FRONTDESK INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:10"}
+{"message":"FRONTDESK INVOICE DELETE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:55"}
+{"message":"DELETE successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:55"}
+{"message":"FRONTDESK INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:57"}
+{"message":"FRONTDESK INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:55:57"}
+{"message":"FRONTDESK VIEW ORDERS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:56:01"}
+{"message":"FRONTDESK VIEW ORDER SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 12:56:01"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:08:38"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:08:38"}
+{"message":"Port 3001 is open and ready!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:14:58"}
+{"message":"DB Connected","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:14:58"}
+{"message":"BACKEND CREATE USER","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:13"}
+{"message":"User Created Successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:13"}
+{"message":"BACKEND GUEST LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:24"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:24"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:36"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:36"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:36"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:36"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:37"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:37"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:37"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:37"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:37"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:37"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:37"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:37"}
+{"message":"BACKEND RESERVATION SEARCH","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:37:51"}
+{"message":"BACKEND RESERVATION MAKE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:38:30"}
+{"message":"RESERVATION MAKE SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:38:30"}
+{"message":"BACKEND RESERVATION CHECK","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:38:35"}
+{"message":"RESERVATION CHECK SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:38:35"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:38:55"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:38:55"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:39:04"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:39:04"}
+{"message":"BACKEND FOOD ORDER POST","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:39:23"}
+{"message":"TRANSACTION COMPLETED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:39:23"}
+{"message":"BACKEND FOOD ORDER GET","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:39:23"}
+{"message":"Food Order Get Success","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:39:23"}
+{"message":"BACKEND INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:39:27"}
+{"message":"INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:39:27"}
+{"message":"BACKEND EMPLOYEE LOGIN","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:40:40"}
+{"message":"Successful login!","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:40:40"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:40:49"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:40:49"}
+{"message":"FRONTDESK UPDATE ROOM","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:41:20"}
+{"message":"Room Status Change Successful","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:41:20"}
+{"message":"FRONTDESK VIEWING ROOMS REQUESTED","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:41:21"}
+{"message":"FRONTDESK VIEWING SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:41:21"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:41:39"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:41:39"}
+{"message":"FRONTDESK INSERT RESERVATION","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:42:50"}
+{"message":"FRONTDESK INSERT RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:42:51"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:42:52"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:42:52"}
+{"message":"FRONTDESK RESERVATION DELETE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:42:59"}
+{"message":"DELETE successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:42:59"}
+{"message":"FRONTDESK VIEWING RESERVATIONS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:00"}
+{"message":"FRONTDEST VIEW RESERVATION SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:00"}
+{"message":"FRONTDESK INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:06"}
+{"message":"FRONTDESK INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:06"}
+{"message":"FRONTDESK INVOICE DELETE","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:12"}
+{"message":"DELETE successfully","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:12"}
+{"message":"FRONTDESK INVOICE VIEW","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:14"}
+{"message":"FRONTDESK INVOICE VIEW SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:14"}
+{"message":"FRONTDESK VIEW ORDERS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:20"}
+{"message":"FRONTDESK VIEW ORDER SUCCESS","level":"info","service":"hotel-db-backend","timestamp":"2019-05-13 13:43:20"}

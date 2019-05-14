@@ -40,6 +40,8 @@ class FoodOrder extends Component
         }
         console.log(data);
         Axios.post('http://localhost:3001/FoodOrder', data)
+        window.alert("Order Placed")
+        window.location.reload();
     }
 
     /*==== user_id with its input below in render() ====*/

@@ -3,7 +3,7 @@ import '../../App.css';
 import axios from 'axios';
 import cookie from 'react-cookies';
 import {Redirect} from 'react-router';
-import Popup from 'react-popup';
+
 
 class Login extends Component
 {
@@ -60,18 +60,17 @@ class Login extends Component
             console.log("Status code: ", response.status);
 
             if (response.status === 200){
+                window.alert("Log In Success");
                 this.setState({
                     authFlag: true
                 })
             }
             else{
-                Popup.alert("Fail to log in")
                 this.setState({
                     authFlag: false
                 })
             }
         });
-        
     }
 
     render()

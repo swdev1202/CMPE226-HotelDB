@@ -66,6 +66,7 @@ class Create extends Component
         }
 
         Axios.post('http://localhost:3001/create', data);
+        window.location.reload();
     }
 
     render(){
@@ -97,8 +98,9 @@ class Create extends Component
                         <div className = "form-group">
                             <input onChange = {this.passwordHandler} type = "password" className = "form-control" name = "password" placeholder = "Password" />
                         </div>
-                        <br></br>
-                        <button onClick = {this.submitCreate} className = "btn btn-primary">Create Account</button>
+                        <div>
+                        <button type="submit" onClick = {this.submitCreate} className = "btn btn-primary">Create Account</button>
+                        </div>
                     </div>
                 </div>
             </div>

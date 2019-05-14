@@ -168,34 +168,50 @@ app.post('/login', function(req, res){
     var guest = guest_id;
 
     // First, retrieve the stored password given a guest_id
-    var sql = "CALL getGuestPassword ( " +
-    mysql.escape(guest) + ")";
+    var sql = "CALL getGuestPassword (" + mysql.escape(guest) + ")";
     con.query(sql, function(err, result){
         if(err){
-            logger.error(err);
-        }
-        // Decrypt the stored password to compare with given password
-        const decryptPassword = cryptr.decrypt(result[0][0].guestPassword);
-
-        if (password === decryptPassword)
-        {
-            // Assigning this guest session
-            res.cookie('cookie', req.body.guest_id, {maxAge: 900000, httpOnly: false, path : '/'});
-            res.writeHead(200, {
-                'Content-Type': 'text/plain'
-            })
-
-            res.end("Successful login");
-            logger.info("Successful login!");
-        }
-        else
-        {
             res.writeHead(400, {
                 'Content-Type': 'text/plain'
             })
 
             res.end("Invalid credentials");
             logger.error("Invalid credentials!");
+        }
+        else{
+            if(result[0] === undefined  || result[0].length == 0){
+                // no result found
+                res.writeHead(400, {
+                    'Content-Type': 'text/plain'
+                })
+                res.end("Invalid credentials");
+                logger.error("No Credential Found")
+            }
+            else{
+                // Decrypt the stored password to compare with given password
+                const decryptPassword = cryptr.decrypt(result[0][0].guestPassword);
+
+                if (password === decryptPassword)
+                {
+                    // Assigning this guest session
+                    res.cookie('cookie', req.body.guest_id, {maxAge: 900000, httpOnly: false, path : '/'});
+                    res.writeHead(200, {
+                        'Content-Type': 'text/plain'
+                    })
+
+                    res.end("Successful login");
+                    logger.info("Successful login!");
+                }
+                else
+                {
+                    res.writeHead(400, {
+                        'Content-Type': 'text/plain'
+                    })
+
+                    res.end("Invalid credentials");
+                    logger.error("Invalid credentials!");
+                }
+            }
         }
     })
 })
@@ -207,33 +223,51 @@ app.post('/emplogin', function(req, res){
     var emp_id = req.body.emp_id;
     var password = req.body.password;
 
-    var sql = "CALL getEmployeePassword (" + 
-    mysql.escape(emp_id) + ")";
-
+    var sql = "CALL getEmployeePassword (" + mysql.escape(emp_id) + ")";
     con.query(sql, function(err, result){
-        // First, decrpyt stored password
-        const decryptPassword = cryptr.decrypt(result[0][0].employeePassword);
-
-        if (password === decryptPassword)
-        {
-            // Give this employee a new session
-            res.cookie('cookie', req.body.emp_id, {maxAge: 900000, httpOnly: false, path : '/'});
-            res.cookie('emp', req.body.emp_id, {maxAge: 900000, httpOnly: false, path : '/'});
-            res.writeHead(200, {
-                'Content-Type': 'text/plain'
-            })
-
-            res.end("Successful login");
-            logger.info("Successful login!");
-        }
-        else
-        {
+        if (err) {
             res.writeHead(400, {
                 'Content-Type': 'text/plain'
             })
 
             res.end("Invalid credentials");
             logger.error("Invalid credentials!");
+        }
+        else {
+            if(result[0] === undefined  || result[0].length == 0){
+                // no result found
+                res.writeHead(400, {
+                    'Content-Type': 'text/plain'
+                })
+                res.end("Invalid credentials");
+                logger.error("No Credential Found")
+            }
+            else{
+                // First, decrpyt stored password
+                const decryptPassword = cryptr.decrypt(result[0][0].employeePassword);
+
+                if (password === decryptPassword)
+                {
+                    // Give this employee a new session
+                    res.cookie('cookie', req.body.emp_id, {maxAge: 900000, httpOnly: false, path : '/'});
+                    res.cookie('emp', req.body.emp_id, {maxAge: 900000, httpOnly: false, path : '/'});
+                    res.writeHead(200, {
+                        'Content-Type': 'text/plain'
+                    })
+
+                    res.end("Successful login");
+                    logger.info("Successful login!");
+                }
+                else
+                {
+                    res.writeHead(400, {
+                        'Content-Type': 'text/plain'
+                    })
+
+                    res.end("Invalid credentials");
+                    logger.error("Invalid credentials!");
+                }
+            }
         }
     })
 })
@@ -249,7 +283,10 @@ app.post('/reservation/search', function(req, res){
     con.query(sql, [onlyDateCheckIn], function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while searching for rooms");
         }
         else{
             res.send(result);
@@ -265,7 +302,10 @@ app.post('/reservation/check', function(req, res){
     con.query(sql, [guestid], function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while checking for a reservation");
         }
         else{
             logger.info("RESERVATION CHECK SUCCESS");
@@ -287,7 +327,10 @@ app.post('/reservation/make', function(req,res){
     con.query(sql, [onlyDateCheckIn, onlyDateCheckOut, userID, roomNum], function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while making a reservation");
         }
         else{
             logger.info("RESERVATION MAKE SUCCESS");
@@ -305,7 +348,10 @@ app.post('/invoice', function(req,res){
     con.query(sql, [userID], function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while viewing an invoice");
         }
         else{
             logger.info("INVOICE VIEW SUCCESS");
@@ -350,7 +396,10 @@ app.post('/FoodOrder', function(req, res){
         if (err) 
         {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while creating food orders");
         }
         
         // insert (guest_id, order_number) to "orders table" //
@@ -402,6 +451,10 @@ app.post('/FoodOrder', function(req, res){
                         con.commit(function(err) {
                             if (err) {
                                 logger.error(err);
+                                res.writeHead(400, {
+                                    'Content-Type': 'text/plain'
+                                })
+                                res.end("Error while committing");
                                 con.rollback(function() {throw err;});
                             }
                             logger.info("TRANSACTION COMPLETED");
@@ -427,7 +480,10 @@ app.get('/frontdesk/view-room', function(req, res){
         if (err) 
         {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while viewing rooms");
         }
         else{
             logger.info('FRONTDESK VIEWING SUCCESS');
@@ -440,20 +496,35 @@ app.get('/frontdesk/view-room', function(req, res){
 app.post('/frontdesk/update-room', function(req, res){
     logger.info('FRONTDESK UPDATE ROOM');
     var roomNum = req.body.roomNumber;
+    
     var newStatus = req.body.newStatus;
-
-    var sql = "UPDATE Room SET roomStatus=? WHERE roomNumber=?";
-    con.query(sql, [newStatus, roomNum], function(err, result) {
-        if (err) {
-            logger.error(err);
-            throw err;
-        }
-        else{
-            var message = "Room Status Change Successful";
-            logger.info(message);
-            res.send(message);
-        }
-    });
+    var allowedStatus = ["0","1","2","3"];
+    var check = allowedStatus.includes(newStatus);
+    if (!check){
+        // if not allowed status came in
+        logger.error("Invalid Room Status");
+        res.writeHead(400, {
+            'Content-Type': 'text/plain'
+        })
+        res.end("Invalid Room Status");
+    }
+    else{
+        var sql = "UPDATE Room SET roomStatus=? WHERE roomNumber=?";
+        con.query(sql, [newStatus, roomNum], function(err, result) {
+            if (err) {
+                logger.error(err);
+                res.writeHead(400, {
+                    'Content-Type': 'text/plain'
+                })
+                res.end("Error while updating a room");
+            }
+            else{
+                var message = "Room Status Change Successful";
+                logger.info(message);
+                res.send(message);
+            }
+        });
+    }
 });
 
 //--------------------------reservations----------------------//
@@ -464,7 +535,10 @@ app.get('/frontdesk/view-reservation', function(req, res){
     con.query(sql, function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while viewing reservations");
         }
         else{
             logger.info("FRONTDEST VIEW RESERVATION SUCCESS");
@@ -483,7 +557,10 @@ app.post('/frontdesk/update-reservation', function(req, res){
     con.query(sql, [roomNum, bookNum], function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while updating a reservation");
         }
         else{
             logger.info("FRONTDESK RESERVATION UPDATE SUCCESS");
@@ -503,7 +580,10 @@ app.post('/frontdesk/insert-reservation', function(req, res){
     con.query(sql, [checkin, checkout, guestid, roomnum], function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while inserting new reservation!");
         }
         else{
             logger.info("FRONTDESK INSERT RESERVATION SUCCESS");
@@ -521,7 +601,10 @@ app.post('/frontdesk/delete-reservation', function(req, res){
     con.query(sql, [res_num], function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while deleting a reservation!");
         }
         else{
             var message = "DELETE successfully"
@@ -540,7 +623,10 @@ app.get('/frontdesk/view-invoice', function(req, res){
     con.query(sql, function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while viewing invoices");
         }
         else{
             logger.info("FRONTDESK INVOICE VIEW SUCCESS");
@@ -560,8 +646,11 @@ app.post('/frontdesk/insert-invoice', function(req, res){
     var sql = "INSERT INTO Invoice (invoiceDate, roomCharge, foodCharge, guestID) VALUES (?,?,?,?)";
     con.query(sql, [invoiceDate, roomCharge, foodCharge, guestID], function(err, result) {
         if (err) {
-            logger.err(err);
-            throw err;
+            logger.error(err);
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while inserting a new invoice!");
         }
         else{
             var message = "Inserted New Invoice!";
@@ -583,7 +672,10 @@ app.post('/frontdesk/update-invoice', function(req, res){
     con.query(sql, [invoiceDate, roomCharge, foodCharge, invoiceNum], function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while updating an invoice");
         }
         else{
             var message = "Updated Invoice!";
@@ -602,7 +694,10 @@ app.post('/frontdesk/delete-invoice', function(req, res){
     con.query(sql, [invoiceNum], function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while deleting an invoice");
         }
         else{
             var message = "DELETE successfully"
@@ -621,7 +716,10 @@ app.get('/frontdesk/view-order', function(req, res){
     con.query(sql, function(err, result) {
         if (err) {
             logger.error(err);
-            throw err;
+            res.writeHead(400, {
+                'Content-Type': 'text/plain'
+            })
+            res.end("Error while viewing orders");
         }
         else{
             logger.info("FRONTDESK VIEW ORDER SUCCESS");

@@ -55,21 +55,22 @@ class empLogin extends Component
         axios.defaults.withCredentials = true;
 
         axios.post('http://localhost:3001/emplogin', data)
-            .then(response => {
-                console.log("Status code: ", response.status);
+        .then(response => {
+            console.log("Status code: ", response.status);
 
-                if (response.status === 200){
-                    this.setState({
-                        authFlag: true
-                    })
-                }
-                else{
-                    this.setState({
-                        authFlag: false
-                    })
-                }
-            });
-        
+            if (response.status === 200){
+                window.alert("Log In Success");
+                this.setState({
+                    authFlag: true
+                })
+            }
+            else{
+                window.alert("Log In Failed");
+                this.setState({
+                    authFlag: false
+                })
+            }
+        });
     }
 
     render()

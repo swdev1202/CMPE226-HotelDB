@@ -152,7 +152,7 @@ class ReservationManage extends Component
                 </div>
 
                 <div>
-                    <h2>Reservation Delete (Manager Only)</h2>
+                    <h2>Reservation Delete</h2>
                     <form>
                         <table>
                             <tbody>

@@ -36,6 +36,7 @@ class ReservationMake extends Component
         }
         Axios.post('http://localhost:3001/reservation/make', data)
         .then(response => {
+            window.alert("Reservation Created")
             console.log(response);
         })
     }
